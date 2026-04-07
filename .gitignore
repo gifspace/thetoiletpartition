@@ -7,6 +7,7 @@ temp_server.js
 jimp_scanner.js
 test_jimp.js
 test_jimp_docs.js
+test_jimp_docs.js
 purge_documents_v3.js
 jimp_cleaner.js
 manual_cleanup.js
@@ -22,4 +23,8 @@ ALL_Partition_Products/สรุปสินค้าทั้งหมด.txt
 
 backup_2026-04-07/
 thetoiletpartition_deploy/
-thetoiletpartition_deploy.zip
+*.zip
+.netlify/
+node_modules/
+the_toiletpartition_deploy/
+.zip
