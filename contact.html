@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ติดต่อเรา | MHC Group Products - The Toilet Partition</title>
+    <meta name="description" content="ติดต่อสอบถามข้อมูล ขอใบเสนอราคา หรือปรึกษาการติดตั้งผนังห้องน้ำสำเร็จรูป MHC Partition">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Sarabun:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Alpine.js -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#004B8D',
+                        secondary: '#00A3E0',
+                        accent: '#F0F4F8',
+                        text: {
+                            dark: '#121A21',
+                            light: '#4A5568'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body x-data="{ mobileMenu: false, formSent: false }">
+
+    <!-- Header (Premium Transparent to Glass) -->
+    <header 
+        x-data="{ scrolled: false }" 
+        @scroll.window="scrolled = (window.pageYOffset > 20)"
+        :class="{ 'bg-white/90 backdrop-blur-xl shadow-lg border-white/20': scrolled, 'bg-transparent border-transparent': !scrolled }"
+        class="fixed top-0 left-0 w-full z-50 transition-all duration-500 px-6 md:px-12 border-b"
+    >
+        <div class="max-w-7xl mx-auto flex justify-between items-center h-20 md:h-24 transition-all duration-500">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center space-x-3 group relative z-10">
+                <div class="w-10 h-10 md:w-12 md:h-12 bg-primary rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-xl group-hover:scale-110 transition-transform duration-300">T</div>
+                <div class="flex flex-col">
+                    <span :class="scrolled ? 'text-primary' : 'text-white'" class="font-black text-lg md:text-xl leading-none uppercase tracking-tighter transition-colors">THE TOILET</span>
+                    <span :class="scrolled ? 'text-secondary' : 'text-white/80'" class="text-[10px] md:text-[11px] font-black tracking-[0.3em] uppercase transition-colors">PARTITION</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center space-x-1">
+                <a href="index.html" :class="scrolled ? 'text-primary/70 hover:text-primary hover:bg-primary/5' : 'text-white/70 hover:text-white hover:bg-white/10'" class="nav-link px-4 py-2 rounded-full font-bold text-sm transition-all">หน้าแรก</a>
+                <a href="about.html" :class="scrolled ? 'text-primary/70 hover:text-primary hover:bg-primary/5' : 'text-white/70 hover:text-white hover:bg-white/10'" class="nav-link px-4 py-2 rounded-full font-bold text-sm transition-all">เกี่ยวกับเรา</a>
+                <a href="products.html" :class="scrolled ? 'text-primary/70 hover:text-primary hover:bg-primary/5' : 'text-white/70 hover:text-white hover:bg-white/10'" class="nav-link px-4 py-2 rounded-full font-bold text-sm transition-all">สินค้าของเรา</a>
+                <a href="works.html" :class="scrolled ? 'text-primary/70 hover:text-primary hover:bg-primary/5' : 'text-white/70 hover:text-white hover:bg-white/10'" class="nav-link px-4 py-2 rounded-full font-bold text-sm transition-all">ผลงานของเรา</a>
+                <a href="contact.html" class="ml-4 px-6 py-2.5 bg-primary text-white rounded-full font-bold text-sm hover:bg-secondary hover:shadow-lg transition-all duration-300 shadow-primary/20">ติดต่อเรา</a>
+            </nav>
+
+            <!-- Mobile Menu Toggle -->
+            <button @click="mobileMenu = !mobileMenu" 
+                    :class="scrolled ? 'text-primary' : 'text-white'"
+                    class="md:hidden relative z-10 p-2 hover:bg-white/10 rounded-lg transition-colors">
+                <svg x-show="!mobileMenu" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"/></svg>
+                <svg x-show="mobileMenu" class="w-7 h-7" style="display:none;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div x-show="mobileMenu" 
+             style="display:none;"
+             x-transition:enter="transition ease-out duration-300"
+             x-transition:enter-start="opacity-0 -translate-y-4"
+             x-transition:enter-end="opacity-100 translate-y-0"
+             x-transition:leave="transition ease-in duration-200"
+             x-transition:leave-start="opacity-100 translate-y-0"
+             x-transition:leave-end="opacity-0 -translate-y-4"
+             class="absolute top-full left-0 w-full bg-white shadow-2xl border-t border-gray-100 md:hidden py-12 px-6 flex flex-col items-center gap-1"
+        >
+            <a @click="mobileMenu = false" href="index.html" class="w-full text-center text-xl font-bold text-primary py-4 border-b border-gray-100/50">หน้าแรก</a>
+            <a @click="mobileMenu = false" href="about.html" class="w-full text-center text-xl font-bold text-primary py-4 border-b border-gray-100/50">เกี่ยวกับเรา</a>
+            <a @click="mobileMenu = false" href="products.html" class="w-full text-center text-xl font-bold text-primary py-4 border-b border-gray-100/50">สินค้าของเรา</a>
+            <a @click="mobileMenu = false" href="works.html" class="w-full text-center text-xl font-bold text-primary py-4 border-b border-gray-100/50">ผลงานของเรา</a>
+            <div class="pt-6 w-full max-w-[280px]">
+                <a @click="mobileMenu = false" href="contact.html" class="flex items-center justify-center bg-secondary text-primary py-4 rounded-2xl font-bold text-lg shadow-xl shadow-secondary/20 w-full">ติดต่อเรา</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Parallax Hero Section -->
+    <section class="relative w-full aspect-[9/16] max-h-[90vh] sm:aspect-auto sm:h-screen sm:max-h-none sm:min-h-[600px] overflow-hidden bg-slate-900 group">
+        <!-- Parallax Background Layer -->
+        <div 
+            x-data="{ y: 0 }" 
+            @scroll.window="y = window.pageYOffset"
+            :style="`transform: translateY(${y * 0.4}px)`"
+            class="absolute inset-0 w-full h-full"
+        >
+            <img 
+                src="assets/images/contact-hero.png" 
+                alt="Contact MHC Group Products" 
+                class="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-[2000ms]"
+            >
+        </div>
+
+        <!-- Premium Multi-stop Gradient Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-slate-900/10"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-primary/60 via-transparent to-transparent"></div>
+
+        <!-- Hero Content Overlay -->
+        <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-6 pt-20 pb-[50px]">
+            <div class="max-w-4xl space-y-6 md:space-y-8">
+                <span class="inline-flex items-center px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-[10px] md:text-xs font-black uppercase tracking-[0.3em] shadow-2xl">
+                    GET IN TOUCH
+                </span>
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-[1.1] md:leading-tight filter drop-shadow-2xl">
+                    ยินดีให้ <br>
+                    <span class="text-secondary italic">คำปรึกษา</span>
+                </h1>
+                <p class="text-base md:text-xl text-white/90 max-w-2xl mx-auto font-medium leading-relaxed drop-shadow-md">
+                    ทีมวิศวกรและผู้เชี่ยวชาญของเราพร้อมสนับสนุนทุกขั้นตอนของโครงการคุณ
+                </p>
+
+                <!-- Floating Scroll Indicator (Moved from absolute position) -->
+                <div class="mt-10 animate-bounce flex flex-col items-center space-y-2 group cursor-pointer opacity-70 hover:opacity-100 transition-opacity">
+                    <span class="text-[9px] font-black text-white uppercase tracking-[0.3em]">Scroll Down</span>
+                    <div class="w-6 h-6 border-2 border-white/30 rounded-full flex items-center justify-center">
+                        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Content -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="grid lg:grid-cols-12 gap-20">
+                
+                <!-- Contact Info (Left) -->
+                <div class="lg:col-span-4 space-y-12 reveal">
+                    <div>
+                        <h2 class="text-2xl font-bold text-primary mb-8 underline-left">ข้อมูลการติดต่อ</h2>
+                        <div class="space-y-8">
+                            <div class="flex items-start group">
+                                <div class="w-12 h-12 bg-accent rounded-xl flex items-center justify-center text-primary mr-6 group-hover:bg-primary group-hover:text-white transition-all">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-primary mb-1">ที่อยู่สำนักงาน</h4>
+                                    <p class="text-sm text-text-light leading-relaxed">
+                                        MHC Group Products Co., Ltd.<br>
+                                        99/159 ม.2 ต.ท่าเสา อ.กระทุ่มแบน <br>จ.สมุทรสาคร 74110
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-start group">
+                                <div class="w-12 h-12 bg-accent rounded-xl flex items-center justify-center text-primary mr-6 group-hover:bg-primary group-hover:text-white transition-all">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-primary mb-1">เบอร์โทรศัพท์</h4>
+                                    <p class="text-sm text-text-light">089-3553-444</p>
+                                    <p class="text-sm text-text-light">089-598-7899</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start group">
+                                <div class="w-12 h-12 bg-accent rounded-xl flex items-center justify-center text-primary mr-6 group-hover:bg-primary group-hover:text-white transition-all">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-primary mb-1">อีเมล</h4>
+                                    <p class="text-sm text-text-light">sale_mhc@hotmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form (Right) -->
+                <div class="lg:col-span-8 bg-accent p-10 md:p-16 rounded-[2.5rem] reveal delay-200 shadow-inner">
+                    <h2 class="text-2xl font-bold text-primary mb-10">ส่งข้อความติดต่อเรา</h2>
+                    <form @submit.prevent="formSent = true" x-show="!formSent" class="space-y-8">
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div class="space-y-2">
+                                <label class="text-xs font-bold text-primary uppercase tracking-widest">Name</label>
+                                <input type="text" placeholder="ระบุชื่อของคุณ" required class="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 text-sm focus:border-primary outline-none transition-all">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-xs font-bold text-primary uppercase tracking-widest">Email</label>
+                                <input type="email" placeholder="example@mail.com" required class="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 text-sm focus:border-primary outline-none transition-all">
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold text-primary uppercase tracking-widest">Subject</label>
+                            <select class="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 text-sm focus:border-primary outline-none transition-all">
+                                <option>ขอใบเสนอราคา (Quotation)</option>
+                                <option>สอบถามข้อมูลทางเทคนิค (Technical Advice)</option>
+                                <option>บริการหลังการขาย (After Sales Service)</option>
+                                <option>อื่นๆ (Others)</option>
+                            </select>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold text-primary uppercase tracking-widest">Message</label>
+                            <textarea rows="6" placeholder="กรุณาระบุรายละเอียดที่ท่านต้องการสอบถาม..." required class="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 text-sm focus:border-primary outline-none transition-all"></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary w-full py-4 text-sm font-bold shadow-xl shadow-primary/20">
+                            SEND MESSAGE
+                        </button>
+                    </form>
+
+                    <div x-show="formSent" x-transition class="text-center py-20">
+                        <div class="w-20 h-20 bg-green-500 text-white rounded-full flex items-center justify-center mx-auto mb-8 shadow-lg shadow-green-200">
+                            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-primary mb-4">ส่งข้อความสำเร็จ!</h3>
+                        <p class="text-text-light">ขอบคุณสำหรับความสนใจ เจ้าหน้าที่ของเราจะติดต่อกลับหาท่านโดยเร็วที่สุด</p>
+                        <button @click="formSent = false" class="mt-8 text-primary font-bold hover:underline">ส่งหัวข้อใหม่</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary pt-24 pb-12 text-white">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div class="space-y-6">
+                    <div class="flex items-center space-x-2 grayscale invert">
+                        <div class="w-8 h-8 bg-white/20 rounded flex items-center justify-center font-bold">T</div>
+                        <span class="font-bold text-xl tracking-tight uppercase">The Toilet Partition</span>
+                    </div>
+                    <p class="text-white/60 text-sm leading-relaxed">
+                        ผู้นำด้านผนังห้องน้ำสำเร็จรูปคุณภาพสูง กันน้ำ 100% ภายใต้บริษัท เอ็มเอชซี กรุ๊ป โปรดักส์ จำกัด ที่สถาปนิกและผู้รับเหมาทั่วประเทศไว้วางใจ
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase tracking-widest text-xs text-secondary">เมนูหลัก</h4>
+                    <ul class="space-y-3 text-white/60 text-sm">
+                        <li><a href="index.html" class="hover:text-secondary transition">หน้าแรก</a></li>
+                        <li><a href="about.html" class="hover:text-secondary transition">เกี่ยวกับเรา</a></li>
+                        <li><a href="products.html" class="hover:text-secondary transition">สินค้าของเรา</a></li>
+                        <li><a href="works.html" class="hover:text-secondary transition">ผลงานของเรา</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase tracking-widest text-xs text-secondary">ติดต่อเรา</h4>
+                    <ul class="space-y-3 text-white/60 text-sm">
+                        <li>📞 089-3553-444</li>
+                        <li>📞 089-598-7899</li>
+                        <li>✉️ sale_mhc@hotmail.com</li>
+                        <li>📱 LINE: @THETOILET</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase tracking-widest text-xs text-secondary">ที่ตั้ง</h4>
+                    <p class="text-white/60 text-sm leading-relaxed">
+                        บริษัท เอ็มเอชซี กรุ๊ป โปรดักส์ จำกัด<br>
+                        99/159 ม.2 ต.ท่าเสา อ.กระทุ่มแบน จ.สมุทรสาคร 74110
+                    </p>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] text-white/40 uppercase tracking-widest">
+                <p>© 2026 MHC Group Products Co., Ltd. All Rights Reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

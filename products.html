@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>สินค้าของเรา | The Toilet Partition</title>
+    <meta name="description" content="รวมผลิตภัณฑ์ผนังห้องน้ำสำเร็จรูปคุณภาพสูง HPL SERIES, PB SERIES และ MFF SERIES มาตรฐาน Green Building">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Anuphan:wght@400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#004B8D',
+                        secondary: '#00A3E0',
+                        accent: '#F4F7F9'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Anuphan', 'Inter', sans-serif; overflow-x: hidden; }
+        [x-cloak] { display: none !important; }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .nav-link { position: relative; }
+        .nav-link::after { content: ''; position: absolute; bottom: 0; left: 50%; width: 0; height: 2px; background: #004B8D; transition: all 0.3s ease; transform: translateX(-50%); }
+        .nav-link:hover::after { width: 70%; }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const observerOptions = { threshold: 0.1 };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) entry.target.classList.add('active');
+                });
+            }, observerOptions);
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        });
+    </script>
+</head>
+<body x-data="{ filter: 'all', mobileMenu: false }">
+
+    <!-- Header (Premium Transparent to Glass) -->
+    <header 
+        x-data="{ scrolled: false }" 
+        @scroll.window="scrolled = (window.pageYOffset > 20)"
+        :class="{ 'bg-white/95 backdrop-blur-xl shadow-lg border-white/20': scrolled, 'bg-transparent border-transparent': !scrolled }"
+        class="fixed top-0 left-0 w-full z-50 transition-all duration-500 px-6 md:px-12 border-b"
+    >
+        <div class="max-w-7xl mx-auto flex justify-between items-center h-20 md:h-24 transition-all duration-500">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center space-x-3 group relative z-10">
+                <div class="w-10 h-10 md:w-12 md:h-12 bg-primary rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-xl group-hover:scale-110 transition-transform duration-300">T</div>
+                <div class="flex flex-col">
+                    <span :class="scrolled ? 'text-primary' : 'text-white'" class="font-black text-lg md:text-xl leading-none uppercase tracking-tighter transition-colors">THE TOILET</span>
+                    <span :class="scrolled ? 'text-secondary' : 'text-white/80'" class="text-[10px] md:text-[11px] font-black tracking-[0.3em] uppercase transition-colors">PARTITION</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center space-x-1">
+                <a href="index.html" :class="scrolled ? 'text-primary/70 hover:text-primary hover:bg-primary/5' : 'text-white/70 hover:text-white hover:bg-white/10'" class="nav-link px-4 py-2 rounded-full font-bold text-sm transition-all">หน้าแรก</a>
+                <a href="about.html" :class="scrolled ? 'text-primary/70 hover:text-primary hover:bg-primary/5' : 'text-white/70 hover:text-white hover:bg-white/10'" class="nav-link px-4 py-2 rounded-full font-bold text-sm transition-all">เกี่ยวกับเรา</a>
+                <a href="products.html" :class="scrolled ? 'text-primary bg-primary/5' : 'text-white bg-white/10'" class="nav-link px-4 py-2 rounded-full font-bold text-sm transition-all border border-transparent" :style="!scrolled && 'border-color: rgba(255,255,255,0.1)'">สินค้าของเรา</a>
+                <a href="works.html" :class="scrolled ? 'text-primary/70 hover:text-primary hover:bg-primary/5' : 'text-white/70 hover:text-white hover:bg-white/10'" class="nav-link px-4 py-2 rounded-full font-bold text-sm transition-all">ผลงานของเรา</a>
+                <a href="contact.html" class="ml-4 px-6 py-2.5 bg-primary text-white rounded-full font-bold text-sm hover:bg-secondary hover:shadow-lg transition-all duration-300 shadow-primary/20">ติดต่อเรา</a>
+            </nav>
+
+            <!-- Mobile Menu Toggle -->
+            <button @click="mobileMenu = !mobileMenu" 
+                    :class="scrolled ? 'text-primary' : 'text-white'"
+                    class="md:hidden relative z-10 p-2 hover:bg-white/10 rounded-lg transition-colors">
+                <svg x-show="!mobileMenu" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"/></svg>
+                <svg x-show="mobileMenu" style="display:none;" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+        </div>
+
+        <div x-show="mobileMenu" 
+             style="display:none;"
+             x-transition:enter="transition ease-out duration-300"
+             x-transition:enter-start="opacity-0 -translate-y-4"
+             x-transition:enter-end="opacity-100 translate-y-0"
+             x-transition:leave="transition ease-in duration-200"
+             x-transition:leave-start="opacity-100 translate-y-0"
+             x-transition:leave-end="opacity-0 -translate-y-4"
+             class="absolute top-full left-0 w-full bg-white shadow-2xl border-t border-gray-100 md:hidden py-12 px-6 flex flex-col items-center gap-1"
+        >
+            <a @click="mobileMenu = false" href="index.html" class="w-full text-center text-xl font-bold text-primary py-4 border-b border-gray-100/50">หน้าแรก</a>
+            <a @click="mobileMenu = false" href="about.html" class="w-full text-center text-xl font-bold text-primary py-4 border-b border-gray-100/50">เกี่ยวกับเรา</a>
+            <a @click="mobileMenu = false" href="products.html" class="w-full text-center text-xl font-bold text-secondary py-4 border-b border-gray-100/50">สินค้าของเรา</a>
+            <a @click="mobileMenu = false" href="works.html" class="w-full text-center text-xl font-bold text-primary py-4 border-b border-gray-100/50">ผลงานของเรา</a>
+            <div class="pt-6 w-full max-w-[280px]">
+                <a @click="mobileMenu = false" href="contact.html" class="flex items-center justify-center bg-primary text-white py-4 rounded-2xl font-bold text-lg shadow-xl shadow-primary/20 w-full">ติดต่อเรา</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Parallax Hero Section -->
+    <section class="relative w-full aspect-[9/16] max-h-[90vh] sm:aspect-auto sm:h-screen sm:max-h-none sm:min-h-[600px] overflow-hidden bg-slate-900 group">
+        <div 
+            x-data="{ y: 0 }" 
+            @scroll.window="y = window.pageYOffset"
+            :style="`transform: translateY(${y * 0.4}px)`"
+            class="absolute inset-0 w-full h-full"
+        >
+            <img src="assets/images/product-hero.png" alt="Hero" class="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-[2000ms]">
+        </div>
+        <div class="absolute inset-0 bg-slate-900/40 backdrop-blur-[1px]"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent"></div>
+        
+        <div class="relative z-10 h-full flex flex-col items-center justify-center text-center px-6 pt-20 pb-[50px]">
+            <span class="px-4 py-1.5 bg-white/10 backdrop-blur-md text-secondary font-black text-[10px] md:text-xs uppercase tracking-[0.3em] rounded-full mb-8">
+                Our Premium Catalog
+            </span>
+            <h1 class="text-6xl md:text-8xl font-black text-white mb-8 filter drop-shadow-2xl leading-[1.1]">
+                PRODUCT <br>
+                <span class="text-secondary italic">ARCHIVE</span>
+            </h1>
+            <p class="text-white/80 text-base md:text-xl max-w-2xl mx-auto leading-relaxed">
+                ยกระดับมาตรฐานพื้นที่ส่วนตัวด้วยวัสดุระดับเวิลด์คลาส <br> ผ่านการทดสอบคุณภาพและการออกแบบที่เหนือกาลเวลา
+            </p>
+
+            <!-- Floating Scroll Indicator (Moved from absolute position) -->
+            <div class="mt-10 animate-bounce flex flex-col items-center space-y-2 group cursor-pointer opacity-70 hover:opacity-100 transition-opacity">
+                <span class="text-[9px] font-black text-white uppercase tracking-[0.3em]">Scroll Down</span>
+                <div class="w-6 h-6 border-2 border-white/30 rounded-full flex items-center justify-center">
+                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Archive Section -->
+    <section 
+        x-data="{ 
+            filter: 'all', 
+            products: [
+                { id: 'TH02', series: 'hpl', title: 'HPL10/13s : TH02 (Cream)', path: 'HPL_10_13s/TH02/TH02_image_1.jpg' },
+                { id: 'TH03', series: 'hpl', title: 'HPL10/13s : TH03 (Gray)', path: 'HPL_10_13s/TH03/TH03_image_1.jpg' },
+                { id: 'TH05', series: 'hpl', title: 'HPL10/13s : TH05 (Green)', path: 'HPL_10_13s/TH05/TH05_image_1.jpg' },
+                { id: 'TH06', series: 'hpl', title: 'HPL10/13s : TH06 (Blue)', path: 'HPL_10_13s/TH06/TH06_image_1.jpg' },
+                { id: 'TH07', series: 'hpl', title: 'HPL10/13s : TH07 (Brown)', path: 'HPL_10_13s/TH07/TH07_image_1.jpg' },
+                { id: 'TH08', series: 'hpl', title: 'HPL10/13s : TH08 (Beige)', path: 'HPL_10_13s/TH08/TH08_image_1.jpg' },
+                { id: 'TH09', series: 'hpl', title: 'HPL10/13s : TH09 (White)', path: 'HPL_10_13s/TH09/TH09_image_1.jpg' },
+                { id: 'TH22', series: 'hpl', title: 'HPL10/13s : TH22 (Stone Pattern)', path: 'HPL_10_13s/TH22/TH22_image_1.jpg' },
+                { id: 'TH23', series: 'hpl', title: 'HPL10/13s : TH23 (Wood Pattern)', path: 'HPL_10_13s/TH23/TH23_image_1.jpg' },
+                { id: 'TH24', series: 'hpl', title: 'HPL10/13s : TH24 (Marble Pattern)', path: 'HPL_10_13s/TH24/TH24_image_1.jpg' },
+                { id: 'TH26', series: 'hpl', title: 'HPL10/13s : TH26 (Dark Wood Pattern)', path: 'HPL_10_13s/TH26/TH26_image_1.jpg' },
+                { id: 'TH33', series: 'hpl', title: 'HPL10/13s : TH33 (Sandstone Pattern)', path: 'HPL_10_13s/TH33/TH33_image_1.jpg' },
+                { id: 'TH34', series: 'hpl', title: 'HPL10/13s : TH34 (Granite Pattern)', path: 'HPL_10_13s/TH34/TH34_image_1.jpg' },
+                { id: 'TP01', series: 'pb', title: 'PB18/28s : TP01 (White)', path: 'PB_18_28s/TP01/TP01_image_1.jpg' },
+                { id: 'TP02', series: 'pb', title: 'PB18/28s : TP02 (Cream)', path: 'PB_18_28s/TP02/TP02_image_1.jpg' },
+                { id: 'TP03', series: 'pb', title: 'PB18/28s : TP03 (Gray)', path: 'PB_18_28s/TP03/TP03_image_1.jpg' },
+                { id: 'TP07', series: 'pb', title: 'PB18/28s : TP07 (Brown)', path: 'PB_18_28s/TP07/TP07_image_1.jpg' },
+                { id: 'TP10', series: 'pb', title: 'PB18/28s : TP10 (Beige)', path: 'PB_18_28s/TP10/TP10_image_1.jpg' },
+                { id: 'TP11', series: 'pb', title: 'PB18/28s : TP11 (Light Green)', path: 'PB_18_28s/TP11/TP11_image_1.jpg' },
+                { id: 'TP21', series: 'pb', title: 'PB18/28s : TP21 (White Marble)', path: 'PB_18_28s/TP21/TP21_image_1.jpg' },
+                { id: 'TP22', series: 'pb', title: 'PB18/28s : TP22 (Gray Marble)', path: 'PB_18_28s/TP22/TP22_image_1.jpg' },
+                { id: 'TP23', series: 'pb', title: 'PB18/28s : TP23 (Green Marble)', path: 'PB_18_28s/TP23/TP23_image_1.jpg' },
+                { id: 'TP33', series: 'pb', title: 'PB18/28s : TP33 (Teak Wood)', path: 'PB_18_28s/TP33/TP33_image_1.jpg' },
+                { id: 'TP34', series: 'pb', title: 'PB18/28s : TP34 (Oak Wood)', path: 'PB_18_28s/TP34/TP34_image_1.jpg' },
+                { id: 'TP41', series: 'pb', title: 'PB18/28s : TP41 (Granite)', path: 'PB_18_28s/TP41/TP41_image_1.jpg' },
+                { id: 'TP42', series: 'pb', title: 'PB18/28s : TP42 (Sandstone)', path: 'PB_18_28s/TP42/TP42_image_1.jpg' },
+                { id: 'MFF-P', series: 'mff', title: 'MFF 25/30s : PREMIUM', path: 'assets/images/product-mff-1.png', isLocal: true },
+                { id: 'MFF-C', series: 'mff', title: 'MFF 25/30s : COMPACT', path: 'assets/images/product-mff-2.png', isLocal: true }
+            ]
+        }"
+    >
+        <!-- Filter Navbar -->
+        <div class="sticky top-[80px] md:top-[96px] z-40 bg-white/90 backdrop-blur-xl border-b border-slate-100 shadow-sm">
+            <div class="max-w-7xl mx-auto px-6 py-4 flex flex-wrap justify-center gap-3">
+                <button @click="filter = 'all'" :class="filter === 'all' ? 'bg-primary text-white shadow-lg shadow-primary/20' : 'bg-slate-50 text-slate-500 hover:bg-slate-100'" class="px-8 py-3 rounded-full text-xs font-black transition-all border border-slate-200 uppercase tracking-widest">ทั้งหมด</button>
+                <button @click="filter = 'hpl'" :class="filter === 'hpl' ? 'bg-primary text-white shadow-lg shadow-primary/20' : 'bg-slate-50 text-slate-500 hover:bg-slate-100'" class="px-8 py-3 rounded-full text-xs font-black transition-all border border-slate-200 uppercase tracking-widest">HPL SERIES</button>
+                <button @click="filter = 'pb'" :class="filter === 'pb' ? 'bg-primary text-white shadow-lg shadow-primary/20' : 'bg-slate-50 text-slate-500 hover:bg-slate-100'" class="px-8 py-3 rounded-full text-xs font-black transition-all border border-slate-200 uppercase tracking-widest">PB SERIES</button>
+                <button @click="filter = 'mff'" :class="filter === 'mff' ? 'bg-primary text-white shadow-lg shadow-primary/20' : 'bg-slate-50 text-slate-500 hover:bg-slate-100'" class="px-8 py-3 rounded-full text-xs font-black transition-all border border-slate-200 uppercase tracking-widest">MFF SERIES</button>
+            </div>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="py-32 bg-slate-50 min-h-screen">
+            <div class="max-w-7xl mx-auto px-6 md:px-12">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+                    <template x-for="product in products" :key="product.id">
+                        <div 
+                            x-show="filter === 'all' || filter === product.series" 
+                            x-transition:enter="transition duration-500"
+                            x-transition:enter-start="opacity-0 scale-90"
+                            x-transition:enter-end="opacity-100 scale-100"
+                            class="group relative bg-white rounded-3xl overflow-hidden border border-slate-100 hover:shadow-2xl transition-all duration-500"
+                        >
+                            <a :href="`products/${product.series}-${product.id.toLowerCase()}.html`" class="block">
+                                <div class="aspect-[4/5] bg-slate-50 flex items-center justify-center p-8 overflow-hidden">
+                                    <img :src="product.isLocal ? product.path : 'ALL_Partition_Products/' + product.path" class="max-h-full max-w-full object-contain group-hover:scale-110 transition-transform duration-700">
+                                    <div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                </div>
+                                <div class="p-8 text-center">
+                                    <span class="text-[10px] font-black text-secondary uppercase tracking-[0.3em] mb-3 block" x-text="product.series === 'hpl' ? 'HPL Series' : (product.series === 'pb' ? 'PB Series' : 'MFF Series')"></span>
+                                    <h3 class="text-sm font-bold text-primary group-hover:text-secondary transition-colors mb-6 leading-relaxed" x-text="product.title"></h3>
+                                    <div class="inline-flex items-center text-[10px] font-black text-primary uppercase tracking-widest border-b-2 border-primary/20 group-hover:border-secondary pb-1 transition-all">
+                                        View Details 
+                                        <svg class="w-3 h-3 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 pt-32 pb-16 text-white overflow-hidden relative">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2"></div>
+        <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-24">
+                <div class="col-span-1 md:col-span-2 space-y-8">
+                    <a href="index.html" class="flex items-center space-x-3 group">
+                        <div class="w-12 h-12 bg-primary rounded-xl flex items-center justify-center text-white font-bold text-2xl group-hover:scale-110 transition-transform">T</div>
+                        <div class="flex flex-col">
+                            <span class="font-black text-2xl leading-none uppercase tracking-tighter">THE TOILET</span>
+                            <span class="text-secondary text-[11px] font-black tracking-[0.3em] uppercase">PARTITION</span>
+                        </div>
+                    </a>
+                    <p class="text-white/50 text-lg max-w-sm leading-relaxed">ยกระดับมาตรฐานพื้นที่ส่วนตัวด้วยวัสดุระดับเวิลด์คลาส</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center hover:bg-primary transition-all border border-white/10">FB</a>
+                        <a href="#" class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center hover:bg-primary transition-all border border-white/10">LN</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-secondary font-black text-xs uppercase tracking-[0.3em] mb-8">Navigation</h4>
+                    <ul class="space-y-4 text-white/40 font-bold text-sm">
+                        <li><a href="index.html" class="hover:text-white">หน้าแรก</a></li>
+                        <li><a href="about.html" class="hover:text-white">เกี่ยวกับเรา</a></li>
+                        <li><a href="products.html" class="hover:text-white">สินค้าของเรา</a></li>
+                        <li><a href="works.html" class="hover:text-white">ผลงานของเรา</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-secondary font-black text-xs uppercase tracking-[0.3em] mb-8">Contact Info</h4>
+                    <ul class="space-y-6 text-white/40 font-bold text-sm">
+                        <li>📍 สมุทรสาคร</li>
+                        <li>📞 089-3553-444</li>
+                        <li>✉️ sale_mhc@hotmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-[10px] font-black text-white/20 uppercase tracking-[0.3em]">&copy; 2024 MHC Co., Ltd. ALL RIGHTS RESERVED.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

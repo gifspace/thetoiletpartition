@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ผนังห้องน้ำสำเร็จรูป รุ่น PB18/28s : TP01 | MHC Partition</title>
+    <meta name="description" content="ผนังห้องน้ำสำเร็จรูป รุ่น PB18/28s : TP01 รหัส MHC-TP01 ราคาปกติ ฿6,500">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Sarabun:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    
+    <!-- Alpine.js -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="../assets/js/main.js"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#004B8D',
+                        secondary: '#00A3E0',
+                        accent: '#F4F7F9',
+                        text: {
+                            dark: '#1A1A1A',
+                            light: '#525252'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body x-data="{ mobileMenu: false }">
+
+    <!-- Navigation Header (Welcraft Style) -->
+    <header 
+        x-data="{ scrolled: false }" 
+        @scroll.window="scrolled = (window.pageYOffset > 50)"
+        :class="{ 'bg-white shadow-md py-3': scrolled, 'bg-white py-4': !scrolled }"
+        class="fixed top-0 left-0 w-full z-50 transition-all duration-300 px-6 md:px-12 border-b border-gray-100"
+    >
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <!-- Logo (Left) -->
+            <a href="../index.html" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white font-bold text-xl shadow-md">T</div>
+                <div class="hidden sm:block">
+                    <span class="block font-bold text-lg leading-none text-primary uppercase tracking-tight">The Toilet</span>
+                    <span class="block text-[10px] font-bold tracking-[0.2em] text-secondary">PARTITION</span>
+                </div>
+            </a>
+
+            <!-- Nav Links (Center) -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="../index.html" class="font-medium text-text-light hover:text-primary transition-colors">หน้าแรก</a>
+                <a href="../about.html" class="font-medium text-text-light hover:text-primary transition-colors">เกี่ยวกับเรา</a>
+                <a href="../products.html" class="font-semibold text-primary hover:text-secondary transition-colors">สินค้าของเรา</a>
+                <a href="../works.html" class="font-medium text-text-light hover:text-primary transition-colors">ผลงานของเรา</a>
+            </nav>
+
+            <!-- CTA Button (Right) -->
+            <div class="flex items-center space-x-4">
+                <a href="../contact.html" class="btn-primary hidden sm:flex text-sm">
+                    ติดต่อเรา
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Product Detail Section -->
+    <main class="pt-32 pb-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            
+            <!-- Breadcrumbs -->
+            <nav class="breadcrumb-nav text-sm mb-6 flex flex-wrap items-center text-text-light overflow-x-auto whitespace-nowrap pb-2">
+                <a href="../index.html" class="hover:text-primary transition-colors">Home</a>
+                <span class="mx-2 text-gray-300">/</span>
+                <a href="../products.html" class="hover:text-primary transition-colors">Products</a>
+                <span class="mx-2 text-gray-300">/</span>
+                <span class="text-primary font-semibold truncate max-w-[200px] sm:max-w-none">ผนังห้องน้ำสำเร็จรูป รุ่น PB18/28s : TP01</span>
+            </nav>
+
+            <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start mb-16 lg:mb-24">
+                <!-- Product Images (Left) -->
+                <div x-data="{ activeImg: '../ALL_Partition_Products/PB_18_28s/TP01/TP01_image_1.jpg' }" class="reveal">
+                    <div class="aspect-square bg-slate-50 rounded-2xl md:rounded-3xl overflow-hidden mb-4 border border-gray-100 shadow-sm transition-all duration-300 hover:shadow-md relative group">
+                        <img :src="activeImg" alt="ผนังห้องน้ำสำเร็จรูป รุ่น PB18/28s : TP01" class="w-full h-full object-contain p-4 sm:p-8 transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <div class="grid grid-cols-4 sm:grid-cols-5 gap-3 lg:gap-4 overflow-x-auto pb-2 snap-x">
+                        <template x-for="img in ['../ALL_Partition_Products/PB_18_28s/TP01/TP01_image_1.jpg','../ALL_Partition_Products/PB_18_28s/TP01/TP01_image_2.jpg','../ALL_Partition_Products/PB_18_28s/TP01/TP01_image_3.png','../ALL_Partition_Products/PB_18_28s/TP01/TP01_image_4.png','../ALL_Partition_Products/PB_18_28s/TP01/TP01_image_5.jpg']" :key="img">
+                            <button 
+                                @click="activeImg = img" 
+                                class="aspect-square rounded-xl md:rounded-2xl border-2 overflow-hidden transition-all duration-300 snap-center flex-shrink-0"
+                                :class="activeImg === img ? 'border-primary ring-2 ring-primary/20 scale-95' : 'border-transparent hover:border-gray-200 hover:scale-95 opacity-80 hover:opacity-100'"
+                            >
+                                <img :src="img" class="w-full h-full object-cover">
+                            </button>
+                        </template>
+                    </div>
+                </div>
+
+                <!-- Product Info (Right) -->
+                <div class="reveal delay-100 mt-6 lg:mt-0 min-w-0 overflow-hidden sm:overflow-visible">
+                    <span class="inline-block px-4 py-1.5 bg-primary/10 text-primary font-bold text-xs uppercase tracking-widest rounded-full mb-4 md:mb-6 shadow-sm">PB 18/28s (กันความชื้น)</span>
+                    <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-3 md:mb-4 leading-tight break-words">ผนังห้องน้ำสำเร็จรูป รุ่น PB18/28s : TP01</h1>
+                    <p class="text-secondary font-bold text-base md:text-lg mb-6 md:mb-8 flex items-center">
+                        <svg class="w-5 h-5 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path></svg>
+                        <span class="truncate">SKU: MHC-TP01</span>
+                    </p>
+                    
+                    <div class="prose prose-slate prose-sm md:prose-base mb-8 md:mb-10 text-text-light leading-relaxed break-words">
+                        <ul class="product-info-list space-y-2 text-text-light text-sm md:text-base">
+  <li class="flex items-start gap-2"><span class="font-semibold text-primary min-w-[110px] shrink-0">ชื่อสินค้า</span><span>ผนังห้องน้ำสำเร็จรูป รุ่น PB18/28s : TP01</span></li>
+  <li class="flex items-start gap-2"><span class="font-semibold text-primary min-w-[110px] shrink-0">รุ่น</span><span>TP01</span></li>
+  <li class="flex items-start gap-2"><span class="font-semibold text-primary min-w-[110px] shrink-0">รหัสสินค้า</span><span>MHC-TP01</span></li>
+  <li class="flex items-start gap-2"><span class="font-semibold text-primary min-w-[110px] shrink-0">ราคาปกติ</span><span>฿6,500</span></li>
+  <li class="flex items-start gap-2"><span class="font-semibold text-primary min-w-[110px] shrink-0">ราคาสมาชิก</span><span>-</span></li>
+  <li class="flex items-start gap-2"><span class="font-semibold text-primary min-w-[110px] shrink-0">แบรนด์</span><span>The Toilet Partition</span></li>
+  <li class="flex items-start gap-2"><span class="font-semibold text-primary min-w-[110px] shrink-0">ผู้ผลิต</span><span>บริษัท เอ็มเอชซี กรุ๊ป โปรดักส์ จำกัด</span></li>
+</ul>
+                    </div>
+
+                    <!-- Quick Specs -->
+                    <div class="grid grid-cols-2 sm:grid-cols-2 gap-4 md:gap-6 mb-8 md:mb-10 py-6 md:py-8 border-y border-gray-100 bg-gray-50/50 rounded-2xl px-4 md:px-6">
+                        <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-50">
+                            <p class="text-[10px] md:text-xs font-bold text-gray-400 uppercase tracking-widest mb-1 flex items-center">
+                                <span class="w-1.5 h-1.5 bg-gray-300 rounded-full mr-2"></span> Material
+                            </p>
+                            <p class="font-bold text-primary text-sm md:text-base">แผ่น Particle Board (PB) / ไม้ปาติเคิลบอร์ด</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-50">
+                            <p class="text-[10px] md:text-xs font-bold text-gray-400 uppercase tracking-widest mb-1 flex items-center">
+                                <span class="w-1.5 h-1.5 bg-gray-300 rounded-full mr-2"></span> Thickness
+                            </p>
+                            <p class="font-bold text-primary text-sm md:text-base">18/28 mm</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-50">
+                            <p class="text-[10px] md:text-xs font-bold text-gray-400 uppercase tracking-widest mb-1 flex items-center">
+                                <span class="w-1.5 h-1.5 bg-gray-300 rounded-full mr-2"></span> Waterproof
+                            </p>
+                            <p class="font-bold text-secondary text-sm md:text-base">Moisture Resistant</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-50">
+                            <p class="text-[10px] md:text-xs font-bold text-gray-400 uppercase tracking-widest mb-1 flex items-center">
+                                <span class="w-1.5 h-1.5 bg-gray-300 rounded-full mr-2"></span> Price
+                            </p>
+                            <p class="font-bold text-primary text-sm md:text-base">฿฿6,500</p>
+                        </div>
+                    </div>
+
+                    <a href="../contact.html" class="btn-primary w-full py-4 text-lg">
+                        ขอใบเสนอราคา / ปรึกษาติดตั้ง
+                    </a>
+                </div>
+            </div>
+
+            <!-- Detailed Specifications (Welcraft style tab-like section) -->
+            <div class="grid lg:grid-cols-3 gap-8 lg:gap-16 border-t border-gray-100 pt-16 lg:pt-24 reveal">
+                <div class="lg:col-span-1">
+                    <h2 class="text-2xl md:text-3xl font-bold text-primary mb-4 md:mb-6">Technical Specification</h2>
+                    <p class="text-text-light text-sm md:text-base leading-relaxed">
+                        รายละเอียดทางเทคนิคสำหรับสถาปนิกและผู้รับเหมา เพื่อการควบคุมมาตรฐานและคุณภาพงานติดตั้ง
+                    </p>
+                </div>
+                <div class="lg:col-span-2">
+                    <div class="space-y-4">
+                        <template x-for='item in [{"label":"Series","value":"PB 18/28s (กันความชื้น)"},{"label":"Model","value":"TP01"},{"label":"Core Material","value":"แผ่น Particle Board (PB) / ไม้ปาติเคิลบอร์ด"},{"label":"Standard Thickness","value":"18/28 mm"},{"label":"Waterproof Level","value":"Moisture Resistant (V313)"},{"label":"Surface Finish","value":"Melamine / Laminate"}]' :key="item.label">
+                            <div class="flex justify-between py-4 border-b border-gray-50">
+                                <span class="text-gray-500 font-medium" x-text="item.label"></span>
+                                <span class="text-primary font-bold text-right" x-text="item.value"></span>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Drawing Section -->
+            <div class="mt-16 lg:mt-24 reveal">
+                <h2 class="text-2xl md:text-3xl font-bold text-primary mb-8 md:mb-12 text-center">Technical Drawing</h2>
+                <div class="bg-accent rounded-2xl md:rounded-3xl p-6 md:p-12 border border-blue-100 overflow-x-auto">
+                    <img src="../ALL_Partition_Products/PB_18_28s/TP01/TP01_image_2.jpg" alt="Drawing of ผนังห้องน้ำสำเร็จรูป รุ่น PB18/28s : TP01" class="mx-auto max-w-full drop-shadow-xl rounded-xl min-w-[300px]">
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-primary pt-24 pb-12 text-white">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div class="space-y-6">
+                    <div class="flex items-center space-x-2 grayscale invert">
+                        <div class="w-8 h-8 bg-white/20 rounded flex items-center justify-center font-bold">T</div>
+                        <span class="font-bold text-xl tracking-tight uppercase">The Toilet Partition</span>
+                    </div>
+                    <p class="text-white/60 text-sm leading-relaxed">
+                        ผู้นำด้านผนังห้องน้ำสำเร็จรูปคุณภาพสูง กันน้ำ 100% ภายใต้บริษัท เอ็มเอชซี กรุ๊ป โปรดักส์ จำกัด ที่สถาปนิกและผู้รับเหมาทั่วประเทศไว้วางใจ
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase tracking-widest text-xs text-secondary">เมนูหลัก</h4>
+                    <ul class="space-y-3 text-white/60 text-sm">
+                        <li><a href="../index.html" class="hover:text-secondary transition">หน้าแรก</a></li>
+                        <li><a href="../about.html" class="hover:text-secondary transition">เกี่ยวกับเรา</a></li>
+                        <li><a href="../products.html" class="hover:text-secondary transition">สินค้าของเรา</a></li>
+                        <li><a href="../works.html" class="hover:text-secondary transition">ผลงานของเรา</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase tracking-widest text-xs text-secondary">ติดต่อเรา</h4>
+                    <ul class="space-y-3 text-white/60 text-sm">
+                        <li>📞 089-3553-444</li>
+                        <li>📞 089-598-7899</li>
+                        <li>✉️ sale_mhc@hotmail.com</li>
+                        <li>📱 LINE: @THETOILET</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase tracking-widest text-xs text-secondary">ที่ตั้ง</h4>
+                    <p class="text-white/60 text-sm leading-relaxed">
+                        บริษัท เอ็มเอชซี กรุ๊ป โปรดักส์ จำกัด<br>
+                        99/159 ม.2 ต.ท่าเสา อ.กระทุ่มแบน จ.สมุทรสาคร 74110
+                    </p>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] text-white/40 uppercase tracking-widest">
+                <p>© 2026 MHC Group Products Co., Ltd. All Rights Reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
