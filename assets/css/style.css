@@ -124,9 +124,9 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Sticky Header Scroll Logic */
 .header-scrolled {
-  background: rgba(255, 255, 255, 0.9) !important;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  padding: 0.5rem 0 !important;
+  background: transparent !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
 }
 
 /* Responsive Overrides */
@@ -251,6 +251,39 @@ html {
   color: var(--home-gold) !important;
 }
 
+.brand-wordmark {
+  display: inline-flex;
+  flex-direction: column;
+  min-width: 8.4rem;
+  color: var(--home-deep);
+  line-height: 1;
+}
+
+.brand-wordmark-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.65rem;
+  font-weight: 700;
+  letter-spacing: -0.055em;
+}
+
+.brand-wordmark-subtitle {
+  margin-top: 0.18rem;
+  color: var(--home-primary);
+  font-family: 'Inter', 'Sarabun', sans-serif;
+  font-size: 0.55rem;
+  font-weight: 800;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+}
+
+.brand-wordmark-footer {
+  color: #fff;
+}
+
+.brand-wordmark-footer .brand-wordmark-subtitle {
+  color: #9fd5ff;
+}
+
 .brand-mark {
   position: relative;
   display: inline-grid;
@@ -314,22 +347,25 @@ html {
 
 .nav-pill {
   display: inline-flex;
-  min-height: 2.75rem;
+  min-height: 3.15rem;
   align-items: center;
   justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.32);
   border-radius: 9999px;
-  padding: 0.6rem 1rem;
-  color: var(--home-deep);
-  font-size: 0.875rem;
-  font-weight: 600;
+  padding: 0.65rem 1.05rem;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
   line-height: 1.2;
-  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  white-space: nowrap;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
 
 .nav-pill:hover,
 .nav-pill:focus-visible {
-  background: #eef6fb;
-  color: var(--home-primary);
+  border-color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
 }
 
 .nav-pill:focus-visible {
@@ -338,8 +374,18 @@ html {
 }
 
 .nav-pill-active {
-  background: #e5f0fa;
-  color: var(--home-primary);
+  border-color: transparent;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+.site-nav-shell {
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 9999px;
+  background: rgba(42, 59, 76, 0.84);
+  padding: 0.48rem;
+  box-shadow: 0 16px 34px rgba(8, 23, 46, 0.16);
+  backdrop-filter: blur(14px);
 }
 
 .mobile-nav-link {
@@ -363,27 +409,98 @@ html {
 }
 
 .site-header {
-  position: relative;
-  background: #fff;
-  border-color: rgba(203, 213, 225, 0.82);
+  position: absolute;
+  inset: 0 0 auto;
+  background: transparent;
+  border-color: transparent;
   box-shadow: none;
-  backdrop-filter: none;
+  pointer-events: none;
+}
+
+.site-header.header-scrolled {
+  position: fixed;
+  inset: 0 0 auto;
 }
 
 .site-header > div:first-child {
-  min-height: 4.5rem;
-  height: 4.5rem;
+  min-height: 6.25rem;
+  height: 6.25rem;
+}
+
+.site-header a,
+.site-header button,
+.site-header nav {
+  pointer-events: auto;
+}
+
+.site-brand-link {
+  min-height: 4rem;
+  min-width: 4rem;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.94);
+  padding: 0.38rem;
+  box-shadow: 0 10px 26px rgba(8, 23, 46, 0.1);
+  backdrop-filter: blur(10px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.site-brand-logo {
+  width: 3.35rem;
+  height: 3.35rem;
+  object-fit: contain;
+}
+
+.site-footer-logo {
+  width: 5.5rem;
+  height: 5.5rem;
+  border-radius: 1rem;
+  background: #fff;
+  object-fit: contain;
+}
+
+.hero-brand-logo {
+  width: clamp(6.5rem, 8.2vw, 8.75rem);
+  height: auto;
+  object-fit: contain;
 }
 
 .site-contact-link {
   background: var(--home-primary);
   color: #fff;
+  border-color: rgba(255, 255, 255, 0.22);
+  box-shadow: 0 8px 18px rgba(0, 75, 141, 0.24);
 }
 
 .site-contact-link:hover,
 .site-contact-link:focus-visible {
   background: #064b8a;
   color: #fff;
+}
+
+@media (min-width: 80rem) {
+  .site-header:not(.header-scrolled) .site-brand-link {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-0.5rem);
+    pointer-events: none;
+  }
+}
+
+@media (max-width: 79.9375rem) {
+  .site-header > div:first-child {
+    min-height: 4.75rem;
+    height: 4.75rem;
+  }
+
+  .site-brand-link {
+    min-height: 3.5rem;
+    min-width: 3.5rem;
+  }
+
+  .site-brand-logo {
+    width: 2.85rem;
+    height: 2.85rem;
+  }
 }
 
 .site-footer {
@@ -599,7 +716,7 @@ html {
   }
 
   .series-card-media {
-    aspect-ratio: 1.18;
+    aspect-ratio: 4 / 5;
     gap: 0.35rem;
     padding: 0.65rem 0.65rem 0;
   }

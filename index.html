@@ -39,17 +39,13 @@
 <body class="home-reference overflow-x-hidden bg-white text-ink" x-data="{ mobileMenu: false }">
     <a href="#main-content" class="skip-link">ข้ามไปยังเนื้อหาหลัก</a>
 
-    <header x-data="{ mobileMenu: false }" class="site-header relative z-50 border-b">
+    <header x-data="{ mobileMenu: false }" class="site-header site-header--sticky z-50">
     <div class="mx-auto flex h-20 max-w-[1480px] items-center justify-between px-5 md:px-10">
-      <a href="index.html" class="group flex items-center gap-3 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#075AA8] focus-visible:ring-offset-2" aria-label="The Toilet Partition หน้าแรก">
-        <span class="brand-mark brand-mark-small" aria-hidden="true"><span>T</span></span>
-        <span class="hidden flex-col sm:flex">
-          <span class="text-sm font-bold uppercase leading-none tracking-[0.12em] text-slate-900">The Toilet</span>
-          <span class="mt-1 text-[9px] font-bold uppercase tracking-[0.32em] text-[#075AA8]">Partition</span>
-        </span>
+      <a href="index.html" class="site-brand-link group flex items-center rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#075AA8] focus-visible:ring-offset-2" aria-label="The Toilet Partition หน้าแรก">
+        <img src="assets/images/logo-toilet-partition.png" alt="" width="240" height="239" class="site-brand-logo" aria-hidden="true">
       </a>
 
-      <nav aria-label="เมนูหลัก" class="hidden items-center gap-1 lg:flex">
+      <nav aria-label="เมนูหลัก" class="site-nav-shell hidden items-center gap-2 xl:flex">
         <a href="index.html" aria-current="page" class="nav-pill nav-pill-active">หน้าแรก</a>
         <a href="about.html" class="nav-pill">เกี่ยวกับเรา</a>
         <a href="products.html" class="nav-pill">สินค้าของเรา</a>
@@ -57,13 +53,13 @@
         <a href="contact.html" class="nav-pill site-contact-link">ติดต่อเรา</a>
       </nav>
 
-      <button type="button" @click="mobileMenu = !mobileMenu" :aria-expanded="mobileMenu" aria-controls="site-mobile-menu" aria-label="เปิดหรือปิดเมนู" class="flex h-12 w-12 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-800 shadow-sm lg:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#075AA8]">
+      <button type="button" @click="mobileMenu = !mobileMenu" :aria-expanded="mobileMenu" aria-controls="site-mobile-menu" aria-label="เปิดหรือปิดเมนู" class="flex h-12 w-12 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-800 shadow-sm xl:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#075AA8]">
         <svg x-show="!mobileMenu" viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke-width="2" stroke-linecap="round"/></svg>
         <svg x-cloak x-show="mobileMenu" viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke-width="2" stroke-linecap="round"/></svg>
       </button>
     </div>
 
-    <nav id="site-mobile-menu" x-cloak x-show="mobileMenu" x-transition.opacity.duration.200ms @click.outside="mobileMenu = false" aria-label="เมนูมือถือ" class="mx-4 mb-4 rounded-3xl border border-slate-200 bg-white p-4 shadow-2xl lg:hidden">
+    <nav id="site-mobile-menu" x-cloak x-show="mobileMenu" x-transition.opacity.duration.200ms @click.outside="mobileMenu = false" aria-label="เมนูมือถือ" class="mx-4 mb-4 rounded-3xl border border-slate-200 bg-white p-4 shadow-2xl xl:hidden">
       <a @click="mobileMenu = false" href="index.html" aria-current="page" class="mobile-nav-link bg-[#EEF6FB] text-[#075AA8]">หน้าแรก</a>
       <a @click="mobileMenu = false" href="about.html" class="mobile-nav-link">เกี่ยวกับเรา</a>
       <a @click="mobileMenu = false" href="products.html" class="mobile-nav-link">สินค้าของเรา</a>
@@ -77,7 +73,7 @@
             <div class="hero-marble relative z-10 flex min-h-[680px] items-center px-6 pb-16 pt-28 sm:px-12 lg:min-h-screen lg:px-10 xl:px-16">
                 <div class="mx-auto w-full max-w-xl text-center lg:text-left">
                     <div class="mb-7 flex justify-center lg:justify-start">
-                        <span class="brand-mark brand-mark-hero" aria-hidden="true"><span>T</span></span>
+                        <img src="assets/images/logo-toilet-partition.png" alt="The Toilet Partition" width="240" height="239" class="hero-brand-logo">
                     </div>
                     <p class="mb-7 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-600">
                         <span class="inline-flex rounded-full border border-slate-400 bg-white/60 px-4 py-2 backdrop-blur">Premium Toilet Partition Solutions</span>
@@ -97,7 +93,7 @@
             </div>
 
             <div class="relative min-h-[520px] overflow-hidden bg-slate-200 lg:min-h-screen">
-                <img src="assets/images/hero.png" alt="ตัวอย่างผนังห้องน้ำสำเร็จรูปสีน้ำเงินในห้องน้ำสมัยใหม่" width="1024" height="1024" class="absolute inset-0 h-full w-full object-cover" fetchpriority="high">
+                <img src="assets/images/hero-pdf.webp" alt="ตัวอย่างผนังห้องน้ำสำเร็จรูปสีน้ำเงินในห้องน้ำสมัยใหม่" width="1413" height="1694" class="absolute inset-0 h-full w-full object-cover" fetchpriority="high">
                 <div class="absolute inset-0 bg-gradient-to-t from-blue-950/25 via-transparent to-white/5"></div>
                 <div class="absolute inset-x-0 bottom-8 flex justify-center">
                     <a href="#series" class="flex min-h-12 items-center gap-3 rounded-full border border-white/60 bg-white/75 px-5 py-2 text-[11px] font-bold uppercase tracking-[0.18em] text-slate-700 shadow-lg backdrop-blur transition hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary" aria-label="เลื่อนลงไปดูซีรีส์สินค้า">
@@ -198,41 +194,52 @@
                     <p class="mt-5 max-w-2xl text-lg leading-8 text-slate-600">เลือกเฉดสี ลวดลาย และพื้นผิว เพื่อดูตัวอย่างห้องน้ำในแบบที่สะท้อนเอกลักษณ์ของโครงการ</p>
                 </div>
 
-                <div class="grid gap-8 lg:grid-cols-[1fr_0.46fr]">
+                <div class="grid gap-8 lg:grid-cols-[1fr_0.52fr]">
                     <div class="relative overflow-hidden rounded-[2rem] bg-slate-100 shadow-soft reveal">
                         <div class="aspect-square sm:aspect-[16/11]">
-                            <img :src="active.image" :alt="'ตัวอย่างผนังห้องน้ำสี ' + active.name" src="assets/images/material-selector/th07.webp" width="1070" height="1070" class="h-full w-full object-cover" aria-live="polite">
+                            <img :src="active.image" :alt="'ตัวอย่าง ' + activeModel.label + ' สี ' + active.name" src="assets/images/material-selector/th07.webp" width="1324" height="1062" class="h-full w-full object-cover" aria-live="polite">
                         </div>
                         <div class="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-deep/85 via-deep/25 to-transparent px-6 pb-6 pt-24 text-white md:px-9 md:pb-8">
                             <p class="text-xs font-bold uppercase tracking-[0.25em] text-blue-200">Selected material</p>
-                            <div class="mt-2 flex items-end justify-between gap-4"><div><strong class="text-3xl" x-text="active.code">TH 07</strong><p class="mt-1 text-sm text-white/75" x-text="active.name">Royal Blue</p></div><span class="rounded-full border border-white/30 bg-white/10 px-4 py-2 text-xs font-semibold backdrop-blur">HPL 10/13 mm.</span></div>
+                            <div class="mt-2 flex items-end justify-between gap-4"><div><strong class="text-3xl" x-text="active.code">TH 07</strong><p class="mt-1 text-sm text-white/75" x-text="active.name">Royal Blue</p></div><span class="rounded-full border border-white/30 bg-white/10 px-4 py-2 text-xs font-semibold backdrop-blur" x-text="activeModel.label">HPL 10 mm</span></div>
                         </div>
                     </div>
 
                     <div class="rounded-[2rem] border border-slate-200 bg-[#F8FAFC] p-5 shadow-soft md:p-7 reveal delay-100">
                         <div class="flex items-center justify-between gap-3 border-b border-slate-200 pb-5">
-                            <div><p class="text-[10px] font-bold uppercase tracking-[0.28em] text-slate-400">Configuration</p><h3 class="mt-1 text-2xl font-bold text-primary">เลือกสี HPL</h3></div>
-                            <span class="rounded-full bg-white px-3 py-2 text-xs font-bold text-slate-500 shadow-sm">14 สี</span>
+                            <div><p class="text-[10px] font-bold uppercase tracking-[0.28em] text-slate-400">Configuration</p><h3 class="mt-1 text-2xl font-bold text-primary">เลือกวัสดุและสี</h3></div>
+                            <span class="rounded-full bg-white px-3 py-2 text-xs font-bold text-slate-500 shadow-sm" x-text="activeModel.colors.length + ' สี'">14 สี</span>
                         </div>
-                        <div class="mt-6 grid grid-cols-4 gap-3 sm:grid-cols-7 lg:grid-cols-4 xl:grid-cols-5" role="group" aria-label="เลือกสีวัสดุ HPL">
-                            <template x-for="material in materials" :key="material.code">
+                        <div class="mt-6" role="group" aria-label="เลือกรุ่นวัสดุ">
+                            <p class="mb-3 text-xs font-bold uppercase tracking-[0.18em] text-slate-500">1. เลือกรุ่นและความหนา</p>
+                            <div class="grid grid-cols-2 gap-2 sm:grid-cols-3">
+                                <template x-for="model in models" :key="model.id">
+                                    <button type="button" @click="chooseModel(model)" :aria-pressed="activeModel.id === model.id" :class="activeModel.id === model.id ? 'border-primary bg-primary text-white shadow-md shadow-blue-900/15' : 'border-slate-200 bg-white text-slate-700 hover:border-primary hover:text-primary'" class="min-h-12 rounded-xl border px-3 py-2 text-sm font-bold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2" x-text="model.label">HPL 10 mm</button>
+                                </template>
+                            </div>
+                        </div>
+                        <div class="mt-6" role="group" :aria-label="'เลือกสี ' + activeModel.label">
+                            <p class="mb-3 text-xs font-bold uppercase tracking-[0.18em] text-slate-500">2. เลือกสีหรือลวดลาย</p>
+                            <div class="grid grid-cols-3 gap-2 sm:grid-cols-5">
+                            <template x-for="material in activeModel.colors" :key="activeModel.id + material.code">
                                 <button
                                     type="button"
                                     @click="select(material)"
                                     :aria-label="'เลือกสี ' + material.code + ' ' + material.name"
                                     :aria-pressed="active.code === material.code"
                                     :class="active.code === material.code ? 'ring-2 ring-primary ring-offset-2 border-primary' : 'border-slate-300 hover:border-primary'"
-                                    class="group flex min-h-[70px] flex-col items-center justify-center rounded-xl border bg-white p-1.5 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+                                    class="group flex min-h-[72px] flex-col items-center justify-center rounded-xl border bg-white p-1.5 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
                                 >
                                     <span class="h-9 w-full rounded-md border border-black/10" :style="{ background: material.swatch }" aria-hidden="true"></span>
-                                    <span class="mt-1.5 text-[10px] font-bold text-slate-600" x-text="material.code">TH 01</span>
+                                    <span class="mt-1.5 max-w-full truncate text-[10px] font-bold text-slate-600" x-text="material.code">TH 01</span>
                                 </button>
                             </template>
+                            </div>
                         </div>
                         <dl class="mt-7 space-y-3">
-                            <div class="config-row"><dt>Series</dt><dd>HPL Series</dd></div>
-                            <div class="config-row"><dt>Thickness</dt><dd>10 / 13 mm.</dd></div>
-                            <div class="config-row"><dt>Surface</dt><dd>Matte</dd></div>
+                            <div class="config-row"><dt>Series</dt><dd x-text="activeModel.series">HPL Series</dd></div>
+                            <div class="config-row"><dt>Thickness</dt><dd x-text="activeModel.thickness">10 mm</dd></div>
+                            <div class="config-row"><dt>Surface</dt><dd x-text="activeModel.surface">High Pressure Laminate</dd></div>
                             <div class="config-row"><dt>Color</dt><dd x-text="active.name">Royal Blue</dd></div>
                             <div class="config-row"><dt>Code</dt><dd x-text="active.code">TH 07</dd></div>
                         </dl>
@@ -283,12 +290,14 @@
         </section>
 
         <section class="relative overflow-hidden py-20 text-center md:py-28" aria-labelledby="cta-title">
-            <img src="assets/images/contact-hero.png" alt="" width="1024" height="1024" loading="lazy" class="absolute inset-0 h-full w-full object-cover" aria-hidden="true">
-            <div class="absolute inset-0 bg-white/83 backdrop-blur-[1px]"></div>
+            <img src="assets/images/contact-cta-pdf.png" alt="" width="1919" height="447" loading="lazy" class="absolute inset-0 h-full w-full object-cover" aria-hidden="true">
+            <div class="absolute inset-0 bg-white/55 backdrop-blur-[1px]"></div>
             <div class="relative z-10 mx-auto max-w-4xl px-5 reveal">
-                <h2 id="cta-title" class="text-4xl font-bold leading-tight text-primary md:text-6xl">พร้อมสร้างความแตกต่าง<br>ในโครงการของคุณหรือยัง</h2>
-                <p class="mx-auto mt-5 max-w-2xl text-lg leading-8 text-slate-700">ให้ผู้เชี่ยวชาญของเราช่วยคุณเลือกโซลูชันที่เหมาะสม เพื่อประสิทธิภาพสูงสุดและความสวยงามที่ยั่งยืน</p>
-                <div class="mt-8 flex flex-col justify-center gap-3 sm:flex-row"><a href="contact.html" class="inline-flex min-h-12 items-center justify-center rounded-full bg-primary px-8 py-3 text-sm font-bold text-white transition hover:bg-blue-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2">ติดต่อเราตอนนี้</a><a href="products.html" class="inline-flex min-h-12 items-center justify-center rounded-full border border-slate-400 bg-white/70 px-8 py-3 text-sm font-bold text-slate-700 transition hover:border-primary hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2">ชมสินค้าทั้งหมด</a></div>
+                <div class="relative left-1/2 w-screen -translate-x-1/2 bg-white/80 px-5 py-4 md:py-5">
+                    <h2 id="cta-title" class="text-4xl font-bold leading-tight text-[#075AA8] md:text-6xl">พร้อมสร้างความแตกต่าง<br>ในโครงการของคุณหรือยัง</h2>
+                </div>
+                <p class="mx-auto mt-5 max-w-2xl text-lg leading-8 text-[#30343A]">ให้ผู้เชี่ยวชาญของเราช่วยคุณเลือกโซลูชันที่เหมาะสม เพื่อประสิทธิภาพสูงสุดและความสวยงามที่ยั่งยืน</p>
+                <div class="mt-8 flex flex-col justify-center gap-3 sm:flex-row"><a href="contact.html" class="inline-flex min-h-12 items-center justify-center rounded-full bg-[#075AA8] px-8 py-3 text-sm font-bold text-white transition hover:bg-[#064B8A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#075AA8] focus-visible:ring-offset-2">ติดต่อเราตอนนี้</a><a href="products.html" class="inline-flex min-h-12 items-center justify-center rounded-full border border-[#4B4B4B] bg-white/90 px-8 py-3 text-sm font-bold text-[#30343A] transition hover:border-[#075AA8] hover:text-[#075AA8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#075AA8] focus-visible:ring-offset-2">ชมสินค้าทั้งหมด</a></div>
             </div>
         </section>
     </main>
@@ -299,8 +308,7 @@
       <div class="grid gap-12 border-b border-white/10 pb-12 md:grid-cols-2 lg:grid-cols-[1.5fr_0.7fr_1fr]">
         <div>
           <a href="index.html" class="inline-flex items-center gap-4 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300">
-            <span class="brand-mark brand-mark-small brand-mark-footer" aria-hidden="true"><span>T</span></span>
-            <span><strong class="block text-xl uppercase tracking-[0.08em] text-white">The Toilet</strong><small class="text-[10px] font-bold uppercase tracking-[0.32em] text-blue-300">Partition</small></span>
+            <img src="assets/images/logo-toilet-partition.png" alt="" width="240" height="239" class="site-footer-logo" aria-hidden="true">
           </a>
           <p class="mt-6 max-w-md leading-7 text-white/55">ยกระดับมาตรฐานพื้นที่ส่วนตัวด้วยวัสดุระดับมืออาชีพ ที่สถาปนิกและโครงการชั้นนำเลือกใช้</p>
           <div class="mt-6 flex gap-3"><a href="https://facebook.com/Mhcgroupproduct" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook MHC Group Product">FB</a><a href="contact.html" class="social-link" aria-label="ติดต่อทาง LINE">LN</a></div>
