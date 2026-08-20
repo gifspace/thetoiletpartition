@@ -3,8 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ติดต่อเรา | MHC Group Products - The Toilet Partition</title>
-    <meta name="description" content="ติดต่อสอบถามข้อมูล ขอใบเสนอราคา หรือปรึกษาการติดตั้งผนังห้องน้ำสำเร็จรูป MHC Partition">
+    <title>ติดต่อผู้ผลิตผนังห้องน้ำสำเร็จรูป | MHC Group Products</title>
+    <meta name="description" content="ติดต่อ MHC Group Products เพื่อขอคำปรึกษา ราคา และบริการติดตั้งผนังห้องน้ำสำเร็จรูปสำหรับบ้าน อาคารสำนักงาน และโครงการ">
+    <link rel="canonical" href="https://thetoiletpartition.com/contact.html">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="th_TH">
+    <meta property="og:url" content="https://thetoiletpartition.com/contact.html">
+    <meta property="og:title" content="ติดต่อผู้ผลิตผนังห้องน้ำสำเร็จรูป | MHC Group Products">
+    <meta property="og:description" content="ขอคำปรึกษาและบริการติดตั้งผนังห้องน้ำสำเร็จรูปสำหรับโครงการของคุณ">
+    <meta property="og:image" content="https://thetoiletpartition.com/assets/images/series/pb-top.webp">
+    <meta property="og:image:alt" content="ผนังห้องน้ำสำเร็จรูป PB ลายไม้">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ติดต่อผู้ผลิตผนังห้องน้ำสำเร็จรูป">
+    <meta name="twitter:description" content="ติดต่อ MHC Group Products เพื่อขอคำปรึกษาและบริการติดตั้ง">
+    <meta name="twitter:image" content="https://thetoiletpartition.com/assets/images/series/pb-top.webp">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,7 +52,7 @@
         }
     </script>
 </head>
-<body x-data="{ mobileMenu: false, formSent: false }">
+<body x-data="{ mobileMenu: false }">
 
     <!-- Header (Premium Transparent to Glass) -->
     <header x-data="{ mobileMenu: false }" class="site-header site-header--sticky z-50">
@@ -161,45 +174,22 @@
                     </div>
                 </div>
 
-                <!-- Form (Right) -->
-                <div class="lg:col-span-8 bg-accent p-10 md:p-16 rounded-[2.5rem] reveal delay-200 shadow-inner">
-                    <h2 class="text-2xl font-bold text-primary mb-10">ส่งข้อความติดต่อเรา</h2>
-                    <form @submit.prevent="formSent = true" x-show="!formSent" class="space-y-8">
-                        <div class="grid md:grid-cols-2 gap-8">
-                            <div class="space-y-2">
-                                <label class="text-xs font-bold text-primary uppercase tracking-widest">Name</label>
-                                <input type="text" placeholder="ระบุชื่อของคุณ" required class="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 text-sm focus:border-primary outline-none transition-all">
-                            </div>
-                            <div class="space-y-2">
-                                <label class="text-xs font-bold text-primary uppercase tracking-widest">Email</label>
-                                <input type="email" placeholder="example@mail.com" required class="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 text-sm focus:border-primary outline-none transition-all">
-                            </div>
-                        </div>
-                        <div class="space-y-2">
-                            <label class="text-xs font-bold text-primary uppercase tracking-widest">Subject</label>
-                            <select class="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 text-sm focus:border-primary outline-none transition-all">
-                                <option>ขอใบเสนอราคา (Quotation)</option>
-                                <option>สอบถามข้อมูลทางเทคนิค (Technical Advice)</option>
-                                <option>บริการหลังการขาย (After Sales Service)</option>
-                                <option>อื่นๆ (Others)</option>
-                            </select>
-                        </div>
-                        <div class="space-y-2">
-                            <label class="text-xs font-bold text-primary uppercase tracking-widest">Message</label>
-                            <textarea rows="6" placeholder="กรุณาระบุรายละเอียดที่ท่านต้องการสอบถาม..." required class="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 text-sm focus:border-primary outline-none transition-all"></textarea>
-                        </div>
-                        <button type="submit" class="btn-primary w-full py-4 text-sm font-bold shadow-xl shadow-primary/20">
-                            SEND MESSAGE
-                        </button>
-                    </form>
-
-                    <div x-show="formSent" x-transition class="text-center py-20">
-                        <div class="w-20 h-20 bg-green-500 text-white rounded-full flex items-center justify-center mx-auto mb-8 shadow-lg shadow-green-200">
-                            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                        </div>
-                        <h3 class="text-2xl font-bold text-primary mb-4">ส่งข้อความสำเร็จ!</h3>
-                        <p class="text-text-light">ขอบคุณสำหรับความสนใจ เจ้าหน้าที่ของเราจะติดต่อกลับหาท่านโดยเร็วที่สุด</p>
-                        <button @click="formSent = false" class="mt-8 text-primary font-bold hover:underline">ส่งหัวข้อใหม่</button>
+                <!-- Office Map -->
+                <div class="lg:col-span-8 overflow-hidden rounded-[2.5rem] bg-accent shadow-inner reveal delay-200">
+                    <div class="border-b border-primary/10 px-8 py-7 md:px-10">
+                        <p class="text-xs font-bold uppercase tracking-[0.2em] text-primary">Our Location</p>
+                        <h2 class="mt-2 text-2xl font-bold text-primary">แผนที่สำนักงาน</h2>
+                        <p class="mt-2 text-sm leading-relaxed text-text-light">99/159 ม.2 ต.ท่าเสา อ.กระทุ่มแบน จ.สมุทรสาคร 74110</p>
+                    </div>
+                    <div class="h-[360px] w-full md:h-[480px]">
+                        <iframe
+                            title="แผนที่สำนักงาน MHC Group Products"
+                            src="https://www.google.com/maps?q=13.6267343,100.2431893&z=14&output=embed"
+                            class="h-full w-full border-0"
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            allowfullscreen>
+                        </iframe>
                     </div>
                 </div>
 
@@ -214,7 +204,7 @@
       <div class="grid gap-12 border-b border-white/10 pb-12 md:grid-cols-2 lg:grid-cols-[1.5fr_0.7fr_1fr]">
         <div>
           <a href="index.html" class="inline-flex items-center gap-4 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300">
-            <img src="assets/images/logo-toilet-partition.png" alt="" width="240" height="239" class="site-footer-logo" aria-hidden="true">
+            <span class="site-footer-wordmark" aria-label="The Toilet Partition">The Toilet Partition</span>
           </a>
           <p class="mt-6 max-w-md leading-7 text-white/55">ยกระดับมาตรฐานพื้นที่ส่วนตัวด้วยวัสดุระดับมืออาชีพ ที่สถาปนิกและโครงการชั้นนำเลือกใช้</p>
           <div class="mt-6 flex gap-3"><a href="https://facebook.com/Mhcgroupproduct" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook MHC Group Product">FB</a><a href="contact.html" class="social-link" aria-label="ติดต่อทาง LINE">LN</a></div>

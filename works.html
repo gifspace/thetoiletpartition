@@ -3,8 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ผลงานติดตั้ง | The Toilet Partition</title>
-    <meta name="description" content="ผลงานติดตั้งผนังห้องน้ำสำเร็จรูปคุณภาพสูง โดย MHC Group Products">
+    <title>ผลงานติดตั้งผนังห้องน้ำสำเร็จรูป | The Toilet Partition</title>
+    <meta name="description" content="ชมผลงานติดตั้งผนังห้องน้ำสำเร็จรูปจากโครงการจริง แบ่งตามภูมิภาค พร้อมภาพติดตั้งและรายละเอียดผลงานของ MHC Group Products">
+    <link rel="canonical" href="https://thetoiletpartition.com/works.html">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="th_TH">
+    <meta property="og:url" content="https://thetoiletpartition.com/works.html">
+    <meta property="og:title" content="ผลงานติดตั้งผนังห้องน้ำสำเร็จรูป">
+    <meta property="og:description" content="ชมผลงานติดตั้งผนังห้องน้ำสำเร็จรูปจากโครงการจริงทั่วประเทศ">
+    <meta property="og:image" content="https://thetoiletpartition.com/assets/images/series/pb-top.webp">
+    <meta property="og:image:alt" content="ตัวอย่างผลงานผนังห้องน้ำสำเร็จรูป PB">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ผลงานติดตั้งผนังห้องน้ำสำเร็จรูป">
+    <meta name="twitter:description" content="ชมผลงานจริงจากโครงการติดตั้งผนังห้องน้ำสำเร็จรูปทั่วประเทศ">
+    <meta name="twitter:image" content="https://thetoiletpartition.com/assets/images/series/pb-top.webp">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -22,6 +35,9 @@
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Anuphan:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <script defer src="./assets/js/main.js"></script>
+    <script defer src="./assets/data/works-drive-inline.js"></script>
+    <script defer src="./assets/js/works-drive.js"></script>
     <style>
         body { font-family: 'Anuphan', 'Inter', sans-serif; background: #f8fafc; }
         .hide-scroll::-webkit-scrollbar { display: none; }
@@ -109,8 +125,10 @@
       </div>
   </section>
 
+  <div id="drive-works-app"></div>
+
   <!-- REGION FILTER -->
-  <div class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-100 py-4 px-6">
+  <div id="legacy-region-filter" class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-100 py-4 px-6">
     <div class="max-w-7xl mx-auto">
       <div class="flex flex-wrap items-center justify-center gap-2 md:gap-3">
         
@@ -160,7 +178,7 @@
 
   <!-- GRID -->
   <main class="max-w-7xl mx-auto px-6 py-12">
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+    <div id="legacy-portfolio-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
       
       <div x-show="filter === 'all' || filter === 'ภาคอีสาน'"
            x-transition:enter="transition ease-out duration-300"
@@ -6224,7 +6242,7 @@
       <div class="grid gap-12 border-b border-white/10 pb-12 md:grid-cols-2 lg:grid-cols-[1.5fr_0.7fr_1fr]">
         <div>
           <a href="index.html" class="inline-flex items-center gap-4 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300">
-            <img src="assets/images/logo-toilet-partition.png" alt="" width="240" height="239" class="site-footer-logo" aria-hidden="true">
+            <span class="site-footer-wordmark" aria-label="The Toilet Partition">The Toilet Partition</span>
           </a>
           <p class="mt-6 max-w-md leading-7 text-white/55">ยกระดับมาตรฐานพื้นที่ส่วนตัวด้วยวัสดุระดับมืออาชีพ ที่สถาปนิกและโครงการชั้นนำเลือกใช้</p>
           <div class="mt-6 flex gap-3"><a href="https://facebook.com/Mhcgroupproduct" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook MHC Group Product">FB</a><a href="contact.html" class="social-link" aria-label="ติดต่อทาง LINE">LN</a></div>

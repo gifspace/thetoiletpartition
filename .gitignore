@@ -24,6 +24,7 @@ ALL_Partition_Products/สรุปสินค้าทั้งหมด.txt
 backup_2026-04-07/
 thetoiletpartition_deploy/
 *.zip
+_deploy_package*/
 .netlify/
 node_modules/
 the_toiletpartition_deploy/

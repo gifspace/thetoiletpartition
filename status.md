@@ -1,3 +1,3 @@
 # Current status
 
-The current website changes are ready for the `backup-v.2` checkpoint. PDF reference files are local-only and excluded from Git.
+The static hosting package `thetoiletpartition-deploy-2026-08-21.zip` is ready. It includes the website pages and required runtime assets, while excluding PDFs, source/reference files, development helpers, and Git metadata.
