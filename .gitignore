@@ -28,3 +28,5 @@ thetoiletpartition_deploy/
 node_modules/
 the_toiletpartition_deploy/
 .zip
+tmp/
+Asset/*.pdf
