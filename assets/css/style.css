@@ -1565,28 +1565,49 @@ html {
 }
 
 .line-social-link {
-  background: #06c755;
-  color: #fff;
-  box-shadow: 0 8px 18px rgba(6, 199, 85, 0.22);
+  background: transparent;
+  color: inherit;
+  box-shadow: none;
 }
 
 .line-social-link:hover,
 .line-social-link:focus-visible {
-  background: #05a947;
-  border-color: #05a947;
-  color: #fff;
+  background: transparent;
+  color: inherit;
 }
 
 .line-social-icon {
   width: 1.25rem;
   height: 1.25rem;
   display: block;
+  background: url('../images/line-icon.png') center / contain no-repeat;
 }
 
 .line-cta-icon {
   width: 1.5rem;
   height: 1.5rem;
   flex: none;
+  display: block;
+  background: url('../images/line-icon.png') center / contain no-repeat;
+}
+
+.line-contact-icon-only {
+  display: inline-flex;
+  width: 4rem;
+  height: 4rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: transparent;
+  transition: transform 0.2s ease;
+}
+
+.line-contact-icon-only:hover,
+.line-contact-icon-only:focus-visible {
+  background: transparent;
+  transform: scale(1.05);
+  outline: 3px solid rgba(6, 199, 85, 0.35);
+  outline-offset: 3px;
 }
 
 .facebook-social-link {
@@ -1617,18 +1638,18 @@ html {
   height: 4rem;
   place-items: center;
   border-radius: 999px;
-  background: #06c755;
-  color: #fff;
-  box-shadow: 0 12px 28px rgba(6, 199, 85, 0.34), 0 4px 12px rgba(2, 24, 45, 0.18);
+  background: transparent;
+  color: inherit;
+  box-shadow: none;
   transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .line-float-link:hover,
 .line-float-link:focus-visible {
-  background: #05a947;
-  color: #fff;
+  background: transparent;
+  color: inherit;
   transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 16px 32px rgba(6, 199, 85, 0.4), 0 5px 14px rgba(2, 24, 45, 0.2);
+  box-shadow: none;
   outline: none;
 }
 
@@ -1638,9 +1659,10 @@ html {
 }
 
 .line-float-icon {
-  width: 2.75rem;
-  height: 2.75rem;
+  width: 4rem;
+  height: 4rem;
   display: block;
+  background: url('../images/line-icon.png') center / contain no-repeat;
 }
 
 @media (max-width: 767px) {
@@ -1652,8 +1674,8 @@ html {
   }
 
   .line-float-icon {
-    width: 2.4rem;
-    height: 2.4rem;
+    width: 3.5rem;
+    height: 3.5rem;
   }
 }
 
