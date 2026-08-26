@@ -1611,21 +1611,22 @@ html {
 }
 
 .facebook-social-link {
-  background: #1877f2;
-  color: #fff;
-  box-shadow: 0 8px 18px rgba(24, 119, 242, 0.2);
+  background: transparent;
+  color: inherit;
+  box-shadow: none;
 }
 
 .facebook-social-link:hover,
 .facebook-social-link:focus-visible {
-  background: #0f65d8;
-  color: #fff;
+  background: transparent;
+  color: inherit;
 }
 
 .social-facebook-icon {
   width: 1.35rem;
   height: 1.35rem;
   display: block;
+  background: url('../images/facebook-icon.png') center / contain no-repeat;
 }
 
 .line-float-link {
