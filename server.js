@@ -27,8 +27,8 @@ const MIME_TYPES = {
 http.createServer((request, response) => {
     const requestUrl = new URL(request.url, `http://${request.headers.host || 'localhost'}`);
     const requestPath = decodeURIComponent(requestUrl.pathname);
-    let filePath = '.' + requestPath;
-    if (filePath == './') filePath = './index.html';
+    let filePath = path.join(__dirname, requestPath.replace(/^[/\\]+/, ''));
+    if (requestPath === '/') filePath = path.join(__dirname, 'index.html');
 
     const extname = String(path.extname(filePath)).toLowerCase();
     const contentType = MIME_TYPES[extname] || 'application/octet-stream';
@@ -36,7 +36,7 @@ http.createServer((request, response) => {
     fs.readFile(filePath, (error, content) => {
         if (error) {
             if(error.code == 'ENOENT') {
-                fs.readFile('./404.html', (error, content) => {
+                fs.readFile(path.join(__dirname, '404.html'), (error, content) => {
                     response.writeHead(404, { 'Content-Type': 'text/html' });
                     response.end(content || '404 Not Found', 'utf-8');
                 });
