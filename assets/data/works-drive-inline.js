@@ -2527,16 +2527,6 @@ window.WORKS_DRIVE_DATA={
               "id": "1--GrYIoXXqxrSbeeVGM4PMtUXLUiwcMP",
               "title": "ชลบุรี-SLAY2.jpg",
               "localPath": "assets/portfolio-drive/1SDp9pZ-N_nPvo3ao8Gm5_Vmv49chP24T/1UpGqrWsUwTRafU6PINdUpxAMSAKeEG4q/001-ชลบ-ร--SLAY2.webp"
-            },
-            {
-              "id": "17XkeRD6pxfPP45_klKnwazAht22NVTQE",
-              "title": "ชลบุรี-SLAY3.jpg",
-              "localPath": "assets/portfolio-imgs/tp-46-slay-pattaya/img-2.jpg"
-            },
-            {
-              "id": "1HBFG19tio0GuF5Jr2M7qvScXNRw_Zy4b",
-              "title": "ชลบุรี-SLAY.jpg",
-              "localPath": "assets/portfolio-imgs/tp-46-slay-pattaya/img-3.jpg"
             }
           ]
         },
