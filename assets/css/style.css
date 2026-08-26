@@ -1545,8 +1545,8 @@ html {
 
 .social-link {
   display: grid;
-  width: 3rem;
-  height: 3rem;
+  width: 2.75rem;
+  height: 2.75rem;
   place-items: center;
   border: 0;
   border-radius: 999px;
@@ -1577,8 +1577,8 @@ html {
 }
 
 .line-social-icon {
-  width: 1.25rem;
-  height: 1.25rem;
+  width: 2.25rem;
+  height: 2.25rem;
   display: block;
   background: url('../images/line-icon.png') center / contain no-repeat;
 }
@@ -1623,10 +1623,14 @@ html {
 }
 
 .social-facebook-icon {
-  width: 1.35rem;
-  height: 1.35rem;
+  width: 2.25rem;
+  height: 2.25rem;
   display: block;
   background: url('../images/facebook-icon.png') center / contain no-repeat;
+}
+
+.site-footer .mt-6.flex.gap-3 {
+  gap: 10px;
 }
 
 .line-float-link {
