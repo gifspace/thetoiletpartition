@@ -25,7 +25,8 @@ const MIME_TYPES = {
 };
 
 http.createServer((request, response) => {
-    let filePath = '.' + request.url;
+    const requestPath = new URL(request.url, `http://${request.headers.host || 'localhost'}`).pathname;
+    let filePath = '.' + requestPath;
     if (filePath == './') filePath = './index.html';
 
     const extname = String(path.extname(filePath)).toLowerCase();

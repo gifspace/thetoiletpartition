@@ -80,48 +80,18 @@
     </nav>
   </header>
 
-  <!-- Parallax Hero Section -->
-  <section class="relative w-full aspect-[9/16] max-h-[90vh] sm:aspect-auto sm:h-screen sm:max-h-none sm:min-h-[600px] overflow-hidden bg-slate-900 group">
-      <!-- Parallax Background Layer -->
-      <div 
-          x-data="{ y: 0 }" 
-          @scroll.window="y = window.pageYOffset"
-          :style="`transform: translateY(${y * 0.4}px)`"
-          class="absolute inset-0 w-full h-full"
-      >
-          <img 
-              src="assets/images/works-hero.png" 
-              alt="Installation Portfolio" 
-              class="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-[2000ms]"
-          >
-      </div>
-
-      <!-- Premium Multi-stop Gradient Overlay -->
-      <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-slate-900/10"></div>
-      <div class="absolute inset-0 bg-gradient-to-r from-primary/60 via-transparent to-transparent"></div>
-
-      <!-- Hero Content Overlay -->
-      <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-6 pt-20 pb-[50px]">
-          <div class="max-w-4xl space-y-6 md:space-y-8">
-              <span class="inline-flex items-center px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-[10px] md:text-xs font-black uppercase tracking-[0.3em] shadow-2xl">
-                  INSTALLATION PORTFOLIO
-              </span>
-              <h1 class="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-[1.1] md:leading-tight filter drop-shadow-2xl">
-                  Installation <br>
-                  <span class="text-secondary italic">Portfolio</span>
-              </h1>
-              <p class="text-lg md:text-xl text-white/90 max-w-2xl mx-auto font-medium leading-relaxed drop-shadow-md">
-                  สัมผัสมาตรฐานงานดีไซน์และผลงานการติดตั้งจริง ณ สถานที่ต่างๆ ทั่วประเทศ
-              </p>
-
-              <!-- Floating Scroll Indicator (Moved from absolute position) -->
-              <div class="mt-10 animate-bounce flex flex-col items-center space-y-2 group cursor-pointer opacity-70 hover:opacity-100 transition-opacity">
-                  <span class="text-[9px] font-black text-white uppercase tracking-[0.3em]">Scroll Down</span>
-                  <div class="w-6 h-6 border-2 border-white/30 rounded-full flex items-center justify-center">
-                      <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
-                  </div>
+  <!-- Installation Portfolio Hero -->
+  <section class="works-hero-reference relative min-h-[680px] overflow-hidden bg-white lg:min-h-[calc(100vh-5rem)]" style="background-image: url('assets/images/works/revise-05/hero-background.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover;" aria-labelledby="works-hero-title">
+      <div class="relative z-10 grid min-h-[680px] items-center lg:min-h-[calc(100vh-5rem)] lg:grid-cols-2">
+          <div class="flex min-h-[680px] items-center justify-center px-6 pb-24 pt-28 text-center lg:min-h-0 lg:justify-start lg:px-[7vw] lg:pb-16 lg:pt-32 lg:text-left">
+              <div class="max-w-[46rem]">
+                  <span class="inline-flex items-center rounded-full border border-[#173f68]/30 bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#173f68] shadow-sm backdrop-blur-sm md:px-5 md:text-sm">INSTALLATION PORTFOLIO</span>
+                  <h1 id="works-hero-title" class="mt-12 text-6xl font-black leading-[0.94] tracking-[-0.05em] text-[#073e70] sm:text-7xl md:text-8xl lg:text-[clamp(4.5rem,7.2vw,8.8rem)]">Installation<br>Portfolio</h1>
+                  <p class="mt-8 max-w-[34rem] text-base font-medium leading-7 text-[#25384d] md:text-lg">สัมผัสมาตรฐานงานดีไซน์และผลงานการติดตั้งจริง ณ สถานที่ต่างๆ ทั่วประเทศ</p>
+                  <a href="#drive-works-app" class="mt-5 inline-flex items-center gap-3 text-sm font-semibold text-[#25384d] transition hover:text-[#075aa8]">SCROLL DOWN <span class="inline-flex h-7 w-7 items-center justify-center rounded-full border border-slate-400 text-base">↓</span></a>
               </div>
           </div>
+          <div class="hidden lg:block" aria-hidden="true"></div>
       </div>
   </section>
 
