@@ -1,7 +1,7 @@
 # Deploy handoff
 
 - Branch: `backup-v.2`.
-- Latest checkpoint: homepage, products/archive, product detail, about, works, material selector, customer section, and responsive header/hero updates are staged for commit.
-- Excluded from the commit: `revise-1/` source/reference media, PDFs, and previously tracked image assets. New runtime images required by the updated pages are included only where they are not already on the remote.
-- Validation: local pages return HTTP 200; `node --check assets/js/main.js` and `git diff --check` pass.
+- Latest checkpoint: homepage, products/archive, product detail, about, works, material selector, customer section, responsive header/hero updates, and all currently referenced local runtime images are committed.
+- PDFs are excluded. The currently present `revise-1/` images are committed because the updated pages reference them; previously tracked image assets remain unchanged.
+- Validation: `node --check assets/js/main.js` and `git diff --cached --check` pass before commit.
 - Project memory: [`PROJECT_MEMORY.md`](PROJECT_MEMORY.md) records the runtime, packaging, and verification conventions.

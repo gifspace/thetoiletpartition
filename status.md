@@ -1,3 +1,3 @@
 # Current status
 
-The website source and required new runtime assets are ready for the requested Git checkpoint. PDFs and the `revise-1/` source/reference media remain excluded.
+The website source and currently referenced local runtime assets are committed. PDFs remain excluded; the present `revise-1/` images are included where the pages reference them.
