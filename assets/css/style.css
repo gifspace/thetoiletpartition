@@ -1610,6 +1610,41 @@ html {
   outline-offset: 3px;
 }
 
+.contact-facebook-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding: 1rem;
+  border: 1px solid #dbe7f1;
+  border-radius: 1.25rem;
+  background: linear-gradient(135deg, #f7fbff, #edf5fb);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-facebook-card:hover,
+.contact-facebook-card:focus-within {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(14, 55, 94, 0.12);
+}
+
+.contact-facebook-card-icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  flex: none;
+  border-radius: 999px;
+  object-fit: contain;
+}
+
+.contact-facebook-card-link {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 0.35rem;
+  color: #1877f2;
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
 .facebook-social-link {
   background: transparent;
   color: inherit;
