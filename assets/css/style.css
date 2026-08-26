@@ -1564,6 +1564,32 @@ html {
   outline: none;
 }
 
+.line-social-link {
+  background: #06c755;
+  border-color: #06c755;
+  color: #fff;
+  box-shadow: 0 8px 18px rgba(6, 199, 85, 0.22);
+}
+
+.line-social-link:hover,
+.line-social-link:focus-visible {
+  background: #05a947;
+  border-color: #05a947;
+  color: #fff;
+}
+
+.line-social-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  display: block;
+}
+
+.line-cta-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  flex: none;
+}
+
 .footer-heading {
   color: #67b7ef !important;
   font-size: 0.72rem;
