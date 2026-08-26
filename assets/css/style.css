@@ -434,12 +434,13 @@ html {
 }
 
 .site-brand-link {
+  gap: 0.65rem;
   min-height: 4rem;
   min-width: 4rem;
-  justify-content: center;
-  background: rgba(255, 255, 255, 0.94);
-  padding: 0.38rem;
-  box-shadow: 0 10px 26px rgba(8, 23, 46, 0.1);
+  justify-content: flex-start;
+  background: transparent;
+  padding: 0;
+  box-shadow: none;
   backdrop-filter: blur(10px);
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
@@ -447,7 +448,25 @@ html {
 .site-brand-logo {
   width: 3.35rem;
   height: 3.35rem;
+  border-radius: 15px;
+  background: #fff;
+  padding: 0.28rem;
+  box-shadow: 0 8px 20px rgba(8, 23, 46, 0.12);
   object-fit: contain;
+}
+
+.site-header .site-brand-logo {
+  width: 12rem;
+  height: 4rem;
+  border-radius: 15px;
+  background: #fff;
+  padding: 0;
+  content: url('../../revise-1/05/LINE_ALBUM_05_260825_2.jpg');
+  object-fit: contain;
+}
+
+.site-brand-link::after {
+  content: none;
 }
 
 .site-footer-logo {
@@ -555,7 +574,7 @@ html {
 }
 
 .series-heading {
-  color: #c99a3d;
+  color: #075aa8;
   font-family: 'Sarabun', 'Inter', sans-serif;
   font-size: clamp(2.15rem, 4vw, 3.4rem);
   font-weight: 700;
@@ -611,10 +630,9 @@ html {
 }
 
 .series-card-media {
-  display: grid;
+  display: block;
   aspect-ratio: 250 / 309;
-  grid-template-rows: 1.12fr 1fr;
-  gap: clamp(0.35rem, 0.65vw, 0.6rem);
+  overflow: hidden;
   min-height: 0;
   padding: clamp(0.7rem, 1.5vw, 1rem) 0.65rem 0;
 }
@@ -640,7 +658,7 @@ html {
 }
 
 .series-card-copy h3 {
-  color: #c99a3d;
+  color: #075aa8;
   font-family: 'Inter', 'Sarabun', sans-serif;
   font-size: clamp(0.96rem, 1.55vw, 1.35rem);
   font-weight: 700;
@@ -668,7 +686,7 @@ html {
   border-radius: 0.45rem;
   background: transparent;
   padding: 0.75rem clamp(1.2rem, 2vw, 1.8rem);
-  color: #263542;
+  color: #075aa8;
   font-size: clamp(0.9rem, 1.1vw, 1rem);
   font-weight: 600;
   line-height: 1.1;
@@ -699,9 +717,23 @@ html {
   outline-offset: 3px;
 }
 
-@media (min-width: 56.25rem) {
+@media (min-width: 56.25rem) and (max-width: 74.99rem) {
   .series-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .works-showcase > div > .grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 75rem) {
+  .series-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .works-showcase > div > .grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
   }
 }
 
@@ -728,7 +760,6 @@ html {
 
   .series-card-media {
     aspect-ratio: 4 / 5;
-    gap: 0.35rem;
     padding: 0.8rem 0.8rem 0;
   }
 
@@ -750,7 +781,8 @@ html {
 }
 
 .solution-section {
-  background: #eef2f6;
+  padding-block: clamp(4rem, 8vw, 8rem);
+  background-color: #eef2f6;
 }
 
 /* Drive-backed installation portfolio and galleries. */
@@ -1134,7 +1166,7 @@ html {
 .solution-shell {
   display: grid;
   width: min(100%, 90rem);
-  aspect-ratio: 48 / 19;
+  aspect-ratio: auto;
   grid-template-columns: 48.75% 51.25%;
 }
 
@@ -1195,7 +1227,7 @@ html {
 
 .solution-benefit h3 {
   color: var(--home-primary);
-  font-size: clamp(0.8rem, 1.25vw, 1.1rem);
+  font-size: clamp(1rem, 1.5vw, 1.28rem);
   font-weight: 700;
   letter-spacing: -0.025em;
   line-height: 1.25;
@@ -1204,7 +1236,7 @@ html {
 .solution-benefit p {
   margin-top: 0.16rem;
   color: #718096;
-  font-size: clamp(0.75rem, 0.9vw, 0.875rem);
+  font-size: clamp(0.9rem, 1.1vw, 1.05rem);
   font-weight: 500;
   line-height: 1.48;
 }
@@ -1218,6 +1250,7 @@ html {
 
 .solution-image-frame {
   position: relative;
+  overflow: hidden;
   width: 100%;
   aspect-ratio: 381 / 311;
   border-radius: clamp(1rem, 1.8vw, 1.65rem);
@@ -1230,6 +1263,7 @@ html {
   border-radius: inherit;
   object-fit: cover;
   object-position: center 57%;
+  transform: scale(1.08);
 }
 
 .solution-project-count {
@@ -1261,6 +1295,10 @@ html {
 }
 
 @media (max-width: 56.1875rem) {
+  .solution-section {
+    padding-block: 0;
+  }
+
   .solution-shell {
     display: block;
     aspect-ratio: auto;
@@ -1302,11 +1340,11 @@ html {
   }
 
   .solution-benefit h3 {
-    font-size: 1rem;
+    font-size: 1.15rem;
   }
 
   .solution-benefit p {
-    font-size: 0.875rem;
+    font-size: 0.98rem;
     line-height: 1.6;
   }
 
@@ -1318,6 +1356,10 @@ html {
     width: min(100%, 38rem);
     margin-inline: auto;
     aspect-ratio: 1.18;
+  }
+
+  .solution-image-frame > img {
+    transform: scale(1.05);
   }
 }
 
@@ -1350,10 +1392,12 @@ html {
 
 .region-card {
   position: relative;
-  min-height: 19rem;
+  display: flex;
+  min-height: 0;
+  flex-direction: column;
   overflow: hidden;
-  border-radius: 1.5rem;
-  background: #64748b;
+  border-radius: 0;
+  background: #fff;
   box-shadow: 0 14px 34px rgba(8, 23, 46, 0.14);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
@@ -1369,55 +1413,65 @@ html {
 }
 
 .region-card img {
+  display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  aspect-ratio: 1 / 1;
+  height: auto;
+  object-fit: contain;
+  background: #f1f5f9;
+  opacity: 1;
   transition: transform 0.45s ease;
 }
 
 .region-card:hover img {
-  transform: scale(1.04);
+  transform: none;
 }
 
-.region-card::after {
+.region-card::before {
   display: none;
 }
 
 #works-title {
-  color: #c99a3d;
+  color: #075aa8;
+  border: 0;
+  box-shadow: none;
+}
+
+#works-title::before,
+#works-title::after {
+  display: none;
+  content: none;
 }
 
 .region-card span {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  bottom: auto;
-  left: 0;
+  position: static;
   z-index: 1;
   display: flex;
   width: 100%;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.8);
-  box-shadow: 0 -6px 18px rgba(8, 23, 46, 0.1);
-  padding: 0.8rem 1rem 0.85rem;
-  color: #173c60;
+  transform: none;
+  background: var(--home-primary);
+  box-shadow: none;
+  padding: 0.7rem 1rem 0.75rem;
+  color: #fff;
   text-align: center;
 }
 
 .region-card strong {
   display: block;
-  color: #c99a3d;
-  font-size: clamp(1.35rem, 2.4vw, 2rem);
+  color: #fff;
+  font-size: clamp(0.62rem, 1.55vw, 1.45rem);
+  letter-spacing: -0.04em;
   line-height: 1.15;
+  white-space: nowrap;
 }
 
 .region-card small {
   display: block;
   margin-top: 0.25rem;
-  color: rgba(23, 60, 96, 0.82);
+  color: rgba(255, 255, 255, 0.9);
   font-size: clamp(0.82rem, 1.2vw, 1rem);
   font-weight: 600;
   line-height: 1.4;
@@ -1428,6 +1482,15 @@ html {
   border: 1px solid #b6d0e8;
   border-radius: 0.75rem;
   background: #fff;
+}
+
+.works-showcase,
+.faq-showcase {
+  background-color: #f7fafc;
+}
+
+.faq-showcase #faq-title {
+  color: #075aa8;
 }
 
 .faq-button {
@@ -1521,7 +1584,7 @@ html {
 
 @media (max-width: 767px) {
   .region-card {
-    min-height: 14rem;
+    min-height: 0;
   }
 
   .brand-mark-hero {

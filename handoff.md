@@ -1,8 +1,7 @@
 # Deploy handoff
 
-- Branch: `backup-v.2` (working tree contains subsequent local UI, works/gallery, contact-map, and SEO changes; not committed by this packaging task).
-- Deploy package: `thetoiletpartition-deploy-2026-08-21.zip`.
-- Package contents: static HTML pages, product/project assets, local WebP portfolio assets, SEO metadata, `robots.txt`, and `sitemap.xml`.
-- Excluded: PDFs and source/reference `Asset/`, unused `Catalog/`, local helper scripts, `server.js`, Git metadata, and handoff/status files.
+- Branch: `backup-v.2`.
+- Latest checkpoint: homepage, products/archive, product detail, about, works, material selector, customer section, and responsive header/hero updates are staged for commit.
+- Excluded from the commit: `revise-1/` source/reference media, PDFs, and previously tracked image assets. New runtime images required by the updated pages are included only where they are not already on the remote.
+- Validation: local pages return HTTP 200; `node --check assets/js/main.js` and `git diff --check` pass.
 - Project memory: [`PROJECT_MEMORY.md`](PROJECT_MEMORY.md) records the runtime, packaging, and verification conventions.
-- Validation: ZIP listing contains no PDF or excluded directories; required homepage, works/gallery data, portfolio assets, robots, and sitemap files are present.

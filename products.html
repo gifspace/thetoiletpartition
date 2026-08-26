@@ -43,6 +43,26 @@
         .nav-link { position: relative; }
         .nav-link::after { content: ''; position: absolute; bottom: 0; left: 50%; width: 0; height: 2px; background: #004B8D; transition: all 0.3s ease; transform: translateX(-50%); }
         .nav-link:hover::after { width: 70%; }
+        .products-page .site-header:not(.header-scrolled) .site-brand-link { visibility: visible; opacity: 1; transform: none; pointer-events: auto; }
+        .products-page .site-brand-link { background: transparent; box-shadow: none; padding: 0; }
+        .products-page .site-brand-logo { width: 12rem; height: 4rem; }
+        .products-brand-wordmark { display: flex; flex-direction: column; color: #242424; font-family: 'Inter', Arial, sans-serif; font-size: clamp(1.05rem, 1.8vw, 1.7rem); line-height: 1.12; letter-spacing: -0.045em; }
+        .products-brand-wordmark strong { font-weight: 900; }
+        .products-brand-wordmark span { font-weight: 400; }
+        .products-hero-title { font-family: 'Inter', Arial, sans-serif; font-size: clamp(4.5rem, 10.6vw, 13.5rem); letter-spacing: -0.07em; text-shadow: 0.04em 0.055em 0.08em rgba(30, 30, 30, 0.52); }
+        .products-hero-subtitle { font-size: 0.39em; letter-spacing: -0.035em; text-shadow: none; }
+        .products-hero-description { text-shadow: 0 1px 10px rgba(255, 255, 255, 0.95); }
+        .products-hero-scroll { animation: products-hero-bounce 1.8s ease-in-out infinite; }
+        @keyframes products-hero-bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(5px); } }
+        @media (max-width: 767px) {
+            .products-page .site-brand-logo { width: 10rem; height: 3.25rem; }
+            .products-brand-wordmark { font-size: 0.92rem; }
+            .products-hero { min-height: 560px; }
+            .products-hero-content { padding-bottom: 1.75rem; }
+            .products-hero-title { font-size: clamp(3.35rem, 17vw, 6rem); }
+            .products-hero-description { max-width: 22rem; font-size: 0.78rem; }
+        }
+        @media (prefers-reduced-motion: reduce) { .products-hero-scroll { animation: none; } }
     </style>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -56,13 +76,14 @@
         });
     </script>
 </head>
-<body x-data="{ filter: 'all', mobileMenu: false }">
+<body class="products-page" x-data="{ filter: 'all', mobileMenu: false }">
 
     <!-- Header (Premium Transparent to Glass) -->
     <header x-data="{ mobileMenu: false }" class="site-header site-header--sticky z-50">
     <div class="mx-auto flex h-20 max-w-[1480px] items-center justify-between px-5 md:px-10">
-      <a href="index.html" class="site-brand-link group flex items-center rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#075AA8] focus-visible:ring-offset-2" aria-label="The Toilet Partition หน้าแรก">
+      <a href="index.html" class="site-brand-link group flex items-center gap-4 rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#075AA8] focus-visible:ring-offset-2" aria-label="The Toilet Partition หน้าแรก">
         <img src="assets/images/logo-toilet-partition.png" alt="" width="240" height="239" class="site-brand-logo" aria-hidden="true">
+        <span class="products-brand-wordmark" aria-hidden="true"><strong>THE TOILET</strong><span>PARTITION</span></span>
       </a>
 
       <nav aria-label="เมนูหลัก" class="site-nav-shell hidden items-center gap-2 xl:flex">
@@ -88,43 +109,25 @@
     </nav>
   </header>
 
-    <!-- Parallax Hero Section -->
-    <section class="relative w-full aspect-[9/16] max-h-[90vh] sm:aspect-auto sm:h-screen sm:max-h-none sm:min-h-[600px] overflow-hidden bg-slate-900 group">
-        <div 
-            x-data="{ y: 0 }" 
-            @scroll.window="y = window.pageYOffset"
-            :style="`transform: translateY(${y * 0.4}px)`"
-            class="absolute inset-0 w-full h-full"
-        >
-            <img src="assets/images/product-hero.png" alt="Hero" class="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-[2000ms]">
-        </div>
-        <div class="absolute inset-0 bg-slate-900/40 backdrop-blur-[1px]"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent"></div>
-        
-        <div class="relative z-10 h-full flex flex-col items-center justify-center text-center px-6 pt-20 pb-[50px]">
-            <span class="px-4 py-1.5 bg-white/10 backdrop-blur-md text-secondary font-black text-[10px] md:text-xs uppercase tracking-[0.3em] rounded-full mb-8">
-                Our Premium Catalog
-            </span>
-            <h1 class="text-6xl md:text-8xl font-black text-white mb-8 filter drop-shadow-2xl leading-[1.1]">
-                PRODUCT <br>
-                <span class="text-secondary italic">ARCHIVE</span>
+    <!-- Product Hero: the clean source image is paired with the reference typography. -->
+    <section class="products-hero relative min-h-[620px] h-[100svh] w-full overflow-hidden" aria-labelledby="products-hero-title">
+        <img src="revise-1/06/LINE_ALBUM_06_260825_2.jpg" alt="ห้องน้ำสำเร็จรูปหลากสีในพื้นที่สมัยใหม่" class="absolute inset-0 h-full w-full object-cover object-center" fetchpriority="high">
+        <div class="products-hero-content relative z-10 flex h-full flex-col items-center justify-end px-5 pb-[4vh] text-center sm:px-8">
+            <h1 id="products-hero-title" class="products-hero-title font-black leading-[0.86] text-white">
+                PRODUCT
+                <span class="products-hero-subtitle block text-[#075AA8]">ARCHIVE</span>
             </h1>
-            <p class="text-white/80 text-base md:text-xl max-w-2xl mx-auto leading-relaxed">
-                ยกระดับมาตรฐานพื้นที่ส่วนตัวด้วยวัสดุระดับเวิลด์คลาส <br> ผ่านการทดสอบคุณภาพและการออกแบบที่เหนือกาลเวลา
+            <p class="products-hero-description mt-4 max-w-4xl text-sm font-medium leading-relaxed text-slate-700 sm:text-base">
+                ยกระดับมาตรฐานพื้นที่ส่วนตัวด้วยวัสดุระดับเวิลด์คลาส ผ่านการทดสอบคุณภาพและการออกแบบที่เหนือกาลเวลา
             </p>
-
-            <!-- Floating Scroll Indicator (Moved from absolute position) -->
-            <div class="mt-10 animate-bounce flex flex-col items-center space-y-2 group cursor-pointer opacity-70 hover:opacity-100 transition-opacity">
-                <span class="text-[9px] font-black text-white uppercase tracking-[0.3em]">Scroll Down</span>
-                <div class="w-6 h-6 border-2 border-white/30 rounded-full flex items-center justify-center">
-                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
-                </div>
-            </div>
+            <a href="#product-archive" class="products-hero-scroll mt-3 inline-flex h-9 w-9 items-center justify-center rounded-full bg-black/15 text-white transition hover:bg-[#075AA8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#075AA8] focus-visible:ring-offset-2" aria-label="เลื่อนลงไปดูรายการสินค้า">
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14m0 0 6-6m-6 6-6-6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
         </div>
     </section>
 
     <!-- Product Archive Section -->
-    <section 
+    <section id="product-archive"
         x-data="{ 
             filter: 'all', 
             products: [
@@ -154,8 +157,8 @@
                 { id: 'TP34', series: 'pb', title: 'PB18/28s : TP34 (Oak Wood)', path: 'PB_18_28s/TP34/TP34_image_1.jpg' },
                 { id: 'TP41', series: 'pb', title: 'PB18/28s : TP41 (Granite)', path: 'PB_18_28s/TP41/TP41_image_1.jpg' },
                 { id: 'TP42', series: 'pb', title: 'PB18/28s : TP42 (Sandstone)', path: 'PB_18_28s/TP42/TP42_image_1.jpg' },
-                { id: 'MFF-P', series: 'mff', title: 'MFF 25/30s : PREMIUM', path: 'assets/images/product-mff-1.png', isLocal: true },
-                { id: 'MFF-C', series: 'mff', title: 'MFF 25/30s : COMPACT', path: 'assets/images/product-mff-2.png', isLocal: true }
+                { id: 'MFF-25', series: 'mff', title: 'MFF 25 mm', path: 'assets/images/material-selector/colors/mff25-01.jpg', href: 'products/mff-premium.html', isLocal: true },
+                { id: 'MFF-30', series: 'mff', title: 'MFF 30 mm', path: 'assets/images/material-selector/colors/mff30-09.jpg', href: 'products/mff-compact.html', isLocal: true }
             ]
         }"
     >
@@ -181,9 +184,9 @@
                             x-transition:enter-end="opacity-100 scale-100"
                             class="group relative bg-white rounded-3xl overflow-hidden border border-slate-100 hover:shadow-2xl transition-all duration-500"
                         >
-                            <a :href="`products/${product.series}-${product.id.toLowerCase()}.html`" class="block">
+                            <a :href="product.href || `products/${product.series}-${product.id.toLowerCase()}.html`" class="block">
                                 <div class="aspect-[4/5] bg-slate-50 flex items-center justify-center p-8 overflow-hidden">
-                                    <img :src="product.isLocal ? product.path : 'ALL_Partition_Products/' + product.path" class="max-h-full max-w-full object-contain group-hover:scale-110 transition-transform duration-700">
+                                    <img :src="product.isLocal ? product.path : 'ALL_Partition_Products/' + product.path" :alt="product.title" class="max-h-full max-w-full object-contain group-hover:scale-110 transition-transform duration-700">
                                     <div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                                 </div>
                                 <div class="p-8 text-center">

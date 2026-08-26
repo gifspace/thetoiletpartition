@@ -51,14 +51,39 @@
             }
         }
     </script>
+    <style>
+        .about-page .site-header:not(.header-scrolled) .site-brand-link { visibility: visible; opacity: 1; transform: none; pointer-events: auto; }
+        .about-page .site-brand-link { background: transparent; box-shadow: none; padding: 0; }
+        .about-page .site-brand-logo { width: 12rem; height: 4rem; }
+        .about-brand-mark { display: inline-flex; align-items: center; justify-content: center; width: 4.25rem; height: 4.25rem; padding: .35rem; border-radius: .55rem; background: rgba(255,255,255,.94); box-shadow: 0 10px 26px rgba(8,23,46,.1); }
+        .about-brand-wordmark { display: flex; flex-direction: column; color: #242424; font-family: 'Inter', Arial, sans-serif; font-size: clamp(1.05rem, 1.8vw, 1.7rem); line-height: 1.12; letter-spacing: -0.045em; }
+        .about-brand-wordmark strong { font-weight: 900; }
+        .about-brand-wordmark span { font-weight: 400; }
+        .about-hero-title { font-family: 'Sarabun', 'Anuphan', sans-serif; font-size: clamp(3.8rem, 10.2vw, 12rem); letter-spacing: -0.06em; line-height: .86; text-shadow: .035em .05em .08em rgba(30,30,30,.5); }
+        .about-hero-subtitle { font-size: .42em; letter-spacing: -.035em; text-shadow: none; }
+        .about-hero-description { text-shadow: 0 1px 10px rgba(255,255,255,.95); }
+        .about-hero-scroll { animation: about-hero-bounce 1.8s ease-in-out infinite; }
+        @keyframes about-hero-bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(5px); } }
+        @media (max-width: 767px) {
+            .about-page .site-brand-logo { width: 10rem; height: 3.25rem; }
+            .about-brand-mark { width: 3.25rem; height: 3.25rem; }
+            .about-brand-wordmark { font-size: .92rem; }
+            .about-hero { min-height: 560px; }
+            .about-hero-content { padding-bottom: 1.75rem; }
+            .about-hero-title { font-size: clamp(3.1rem, 16vw, 6rem); }
+            .about-hero-description { max-width: 22rem; font-size: .78rem; }
+        }
+        @media (prefers-reduced-motion: reduce) { .about-hero-scroll { animation: none; } }
+    </style>
 </head>
-<body x-data="{ mobileMenu: false }">
+<body class="about-page" x-data="{ mobileMenu: false }">
 
     <!-- Header (Premium Transparent to Glass) -->
     <header x-data="{ mobileMenu: false }" class="site-header site-header--sticky z-50">
     <div class="mx-auto flex h-20 max-w-[1480px] items-center justify-between px-5 md:px-10">
-      <a href="index.html" class="site-brand-link group flex items-center rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#075AA8] focus-visible:ring-offset-2" aria-label="The Toilet Partition หน้าแรก">
-        <img src="assets/images/logo-toilet-partition.png" alt="" width="240" height="239" class="site-brand-logo" aria-hidden="true">
+      <a href="index.html" class="site-brand-link group flex items-center gap-4 rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#075AA8] focus-visible:ring-offset-2" aria-label="The Toilet Partition หน้าแรก">
+        <span class="about-brand-mark"><img src="assets/images/logo-toilet-partition.png" alt="" width="240" height="239" class="site-brand-logo" aria-hidden="true"></span>
+        <span class="about-brand-wordmark" aria-hidden="true"><strong>THE TOILET</strong><span>PARTITION</span></span>
       </a>
 
       <nav aria-label="เมนูหลัก" class="site-nav-shell hidden items-center gap-2 xl:flex">
@@ -84,54 +109,18 @@
     </nav>
   </header>
 
-    <!-- Parallax Hero Section -->
-    <section class="relative w-full aspect-[9/16] max-h-[90vh] sm:aspect-auto sm:h-screen sm:max-h-none sm:min-h-[600px] overflow-hidden bg-slate-900 group">
-        <!-- Parallax Background Layer -->
-        <div 
-            x-data="{ y: 0 }" 
-            @scroll.window="y = window.pageYOffset"
-            :style="`transform: translateY(${y * 0.4}px)`"
-            class="absolute inset-0 w-full h-full"
-        >
-            <img 
-                src="assets/images/about-hero.png" 
-                alt="About MHC Group Products" 
-                class="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-[2000ms]"
-            >
-        </div>
-
-        <!-- Premium Multi-stop Gradient Overlay -->
-        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-slate-900/10"></div>
-        <div class="absolute inset-0 bg-gradient-to-r from-primary/60 via-transparent to-transparent"></div>
-
-        <!-- Hero Content Overlay -->
-        <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-6 pt-20 pb-[50px]">
-            <div class="max-w-4xl space-y-6 md:space-y-8">
-                <span class="inline-flex items-center px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-[10px] md:text-xs font-black uppercase tracking-[0.3em] shadow-2xl">
-                    ABOUT OUR COMPANY
-                </span>
-                <h1 class="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-[1.1] md:leading-tight filter drop-shadow-2xl">
-                    ความเชื่อถือ <br>
-                    <span class="text-secondary italic">คือรากฐาน</span>
-                </h1>
-                <p class="text-base md:text-xl text-white/90 max-w-2xl mx-auto font-medium leading-relaxed drop-shadow-md">
-                    ที่ MHC Group Products เรามุ่งมั่นยกระดับมาตรฐานพื้นที่ส่วนตัว 
-                    ด้วยนวัตกรรมและคุณภาพที่สถาปนิกทั่วประเทศไว้วางใจ
-                </p>
-
-                <!-- Floating Scroll Indicator (Moved from absolute position) -->
-                <div class="mt-10 animate-bounce flex flex-col items-center space-y-2 group cursor-pointer opacity-70 hover:opacity-100 transition-opacity">
-                    <span class="text-[9px] font-black text-white uppercase tracking-[0.3em]">Scroll Down</span>
-                    <div class="w-6 h-6 border-2 border-white/30 rounded-full flex items-center justify-center">
-                        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
-                    </div>
-                </div>
-            </div>
+    <!-- About Hero: clean reference background with accessible HTML text layered above it. -->
+    <section class="about-hero relative h-[100svh] min-h-[620px] w-full overflow-hidden" aria-labelledby="about-hero-title">
+        <img src="revise-1/07/LINE_ALBUM_07_260825_1.jpg" alt="พื้นที่ห้องน้ำสำเร็จรูปหลากสีและทีมผู้ใช้งาน" class="absolute inset-0 h-full w-full object-cover object-center" fetchpriority="high">
+        <div class="about-hero-content relative z-10 flex h-full flex-col items-center justify-end px-5 pb-[4vh] text-center sm:px-8">
+            <h1 id="about-hero-title" class="about-hero-title font-black text-white">ความเชื่อถือ<span class="about-hero-subtitle block text-[#075AA8]">คือรากฐาน</span></h1>
+            <p class="about-hero-description mt-5 max-w-4xl text-sm font-medium leading-relaxed text-slate-700 sm:text-base">ที่ MHC Group Products เรามุ่งมั่นยกระดับมาตรฐานพื้นที่ส่วนตัว ด้วยนวัตกรรมและคุณภาพที่สถาปนิกทั่วประเทศไว้วางใจ</p>
+            <a href="#company-profile" class="about-hero-scroll mt-3 inline-flex h-9 w-9 items-center justify-center rounded-full bg-black/15 text-white transition hover:bg-[#075AA8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#075AA8] focus-visible:ring-offset-2" aria-label="เลื่อนลงไปอ่านข้อมูลบริษัท"><svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14m0 0 6-6m-6 6-6-6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
     </section>
 
     <!-- Company Profile -->
-    <section class="py-24 bg-white">
+    <section id="company-profile" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-6 md:px-12">
             <div class="grid lg:grid-cols-2 gap-20 items-center">
                 <div class="reveal">
