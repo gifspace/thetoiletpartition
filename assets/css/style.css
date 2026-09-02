@@ -1774,6 +1774,76 @@ html {
   background: url('../images/line-icon.png') center / contain no-repeat;
 }
 
+.contact-hero-image {
+  object-position: 58% center;
+}
+
+/* Keep the orange partition installation visible in narrow Works Hero viewports. */
+.works-hero-reference {
+  background-position: center;
+}
+
+@media (max-width: 767px) {
+  .works-hero-reference {
+    background-position: calc(72% - 50px) center !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  .works-hero-reference {
+    background-position: 66% center !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .contact-hero-image {
+    object-position: 62% center;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  .contact-hero-image {
+    object-position: 60% center;
+  }
+}
+
+.back-to-top-link {
+  position: fixed;
+  right: calc(max(1rem, env(safe-area-inset-right)) + 1rem);
+  bottom: calc(max(1rem, env(safe-area-inset-bottom)) + 4rem + 25px);
+  z-index: 60;
+  display: grid;
+  width: 2rem;
+  height: 2rem;
+  place-items: center;
+  border: 0;
+  border-radius: 999px;
+  background: #075aa8;
+  color: #fff;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(0.5rem) scale(0.9);
+  transition: opacity 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
+}
+
+.back-to-top-link.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+}
+
+.back-to-top-link:hover,
+.back-to-top-link:focus-visible {
+  background: #064b8a;
+  outline: 3px solid rgba(7, 90, 168, 0.22);
+  outline-offset: 3px;
+}
+
+.back-to-top-link svg {
+  width: 1rem;
+  height: 1rem;
+}
+
 @media (max-width: 767px) {
   .line-float-link {
     right: max(0.875rem, env(safe-area-inset-right));
@@ -1785,6 +1855,18 @@ html {
   .line-float-icon {
     width: 3.5rem;
     height: 3.5rem;
+  }
+
+  .back-to-top-link {
+    right: calc(max(0.875rem, env(safe-area-inset-right)) + 0.875rem);
+    bottom: calc(max(0.875rem, env(safe-area-inset-bottom)) + 3.5rem + 25px);
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+
+  .back-to-top-link svg {
+    width: 0.875rem;
+    height: 0.875rem;
   }
 }
 

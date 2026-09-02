@@ -20,6 +20,36 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', syncHeaderState, { passive: true });
     window.addEventListener('resize', syncHeaderState, { passive: true });
 
+    if (!document.querySelector('.back-to-top-link')) {
+        const backToTop = document.createElement('button');
+        backToTop.type = 'button';
+        backToTop.className = 'back-to-top-link';
+        backToTop.setAttribute('aria-label', 'กลับขึ้นด้านบน');
+        backToTop.title = 'กลับขึ้นด้านบน';
+        backToTop.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M12 19V5m-6 6 6-6 6 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+        document.body.appendChild(backToTop);
+
+        let previousScrollY = window.scrollY;
+        const syncBackToTop = () => {
+            const maxScroll = Math.max(document.documentElement.scrollHeight - window.innerHeight, 0);
+            const scrollProgress = maxScroll > 0 ? window.scrollY / maxScroll : 0;
+            const scrollingDown = window.scrollY > previousScrollY;
+            if (scrollingDown) {
+                backToTop.classList.remove('is-visible');
+            } else if (window.scrollY < previousScrollY && scrollProgress >= 0.3) {
+                backToTop.classList.add('is-visible');
+            } else if (scrollProgress < 0.3) {
+                backToTop.classList.remove('is-visible');
+            }
+            previousScrollY = window.scrollY;
+        };
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+        });
+        window.addEventListener('scroll', syncBackToTop, { passive: true });
+        syncBackToTop();
+    }
+
     const siteFooter = document.querySelector('.site-footer');
     if (siteHeader && siteFooter && 'IntersectionObserver' in window) {
         const footerObserver = new IntersectionObserver(([entry]) => {
