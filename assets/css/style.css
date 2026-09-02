@@ -479,19 +479,37 @@ html {
 
 .site-footer-wordmark {
   display: inline-block;
-  color: #fff;
-  font-family: 'Inter', 'Arial', sans-serif;
-  font-size: clamp(1.35rem, 2.2vw, 2rem);
-  font-weight: 900;
-  letter-spacing: -0.045em;
-  line-height: 1;
-  text-wrap: balance;
+  width: clamp(10.5rem, 18vw, 15rem);
+  height: clamp(3.6rem, 6vw, 4.5rem);
+  border-radius: 15px;
+  background: #fff url('../../revise-1/05/LINE_ALBUM_05_260825_2.jpg') center / contain no-repeat;
+  font-size: 0;
+  line-height: 0;
+  box-shadow: 0 8px 20px rgba(8, 23, 46, 0.16);
+}
+
+.site-header.footer-visible .site-brand-link {
+  visibility: hidden !important;
+  opacity: 0 !important;
+  transform: translateY(-0.5rem) !important;
+  pointer-events: none !important;
+}
+
+.site-header.site-header.footer-visible .site-brand-link {
+  visibility: hidden !important;
+  opacity: 0 !important;
+  transform: translateY(-0.5rem) !important;
+  pointer-events: none !important;
 }
 
 .hero-brand-logo {
   width: clamp(6.5rem, 8.2vw, 8.75rem);
   height: auto;
   object-fit: contain;
+}
+
+.home-hero-overlay {
+  display: none;
 }
 
 .site-contact-link {
@@ -530,6 +548,25 @@ html {
   .site-brand-logo {
     width: 2.85rem;
     height: 2.85rem;
+  }
+
+  .site-header:not(.mobile-brand-visible) .site-brand-link {
+    visibility: hidden !important;
+    opacity: 0 !important;
+    transform: translateY(-0.5rem) !important;
+    pointer-events: none !important;
+  }
+
+  .site-header.mobile-brand-visible .site-brand-link {
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: none !important;
+    pointer-events: auto !important;
+  }
+
+  .home-hero-overlay {
+    display: block;
+    background: rgba(255, 255, 255, 0.3);
   }
 }
 
@@ -587,6 +624,15 @@ html {
   font-weight: inherit;
 }
 
+.series-typewriter {
+  clip-path: inset(0 100% 0 0);
+  animation: series-typewriter-reveal 1.8s steps(24, end) forwards;
+}
+
+@keyframes series-typewriter-reveal {
+  to { clip-path: inset(0 0 0 0); }
+}
+
 .series-heading-rule {
   width: min(30.5vw, 28rem);
   height: clamp(0.2rem, 0.42vw, 0.35rem);
@@ -596,6 +642,7 @@ html {
 
 .series-intro {
   display: inline-block;
+  margin-top: 25px;
   max-width: 100%;
   border-radius: 9999px;
   background: rgba(166, 166, 166, 0.58);
@@ -604,6 +651,13 @@ html {
   font-size: clamp(0.875rem, 1.45vw, 1.15rem);
   font-weight: 500;
   line-height: 1.32;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .series-typewriter {
+    clip-path: none;
+    animation: none;
+  }
 }
 
 .series-grid {
@@ -682,11 +736,11 @@ html {
   min-height: 3.35rem;
   align-items: center;
   justify-content: center;
-  margin-top: auto;
+  margin-top: 25px;
   border-radius: 0.45rem;
   background: transparent;
   padding: 0.75rem clamp(1.2rem, 2vw, 1.8rem);
-  color: #075aa8;
+  color: #000;
   font-size: clamp(0.9rem, 1.1vw, 1rem);
   font-weight: 600;
   line-height: 1.1;
@@ -1493,6 +1547,11 @@ html {
   color: #075aa8;
 }
 
+.faq-room-fade {
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 54%, rgba(0, 0, 0, 0.9) 72%, transparent 100%);
+  mask-image: radial-gradient(ellipse at center, #000 54%, rgba(0, 0, 0, 0.9) 72%, transparent 100%);
+}
+
 .faq-button {
   display: flex;
   min-height: 3.5rem;
@@ -1745,6 +1804,19 @@ html {
 .footer-link:focus-visible {
   color: #fff;
   outline: none;
+}
+
+@media (min-width: 56.25rem) and (max-width: 74.99rem) {
+  .site-footer > div > .grid {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+    align-items: start;
+    column-gap: 2.5rem;
+    row-gap: 2.5rem;
+  }
+
+  .site-footer > div > .grid > :nth-child(3) {
+    grid-column: 2;
+  }
 }
 
 @media (max-width: 767px) {

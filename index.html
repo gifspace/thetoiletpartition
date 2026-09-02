@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="th" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
+ <link rel="icon" type="image/png" href="assets/images/logo-toilet-partition.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ผนังห้องน้ำสำเร็จรูป The Toilet Partition | MHC Group Products</title>
     <meta name="description" content="ผู้ผลิตและติดตั้งผนังห้องน้ำสำเร็จรูป HPL, PB และ MFF คุณภาพสูง พร้อมบริการออกแบบและติดตั้งทั่วประเทศ">
@@ -99,6 +100,7 @@
 
     <main id="main-content">
         <section class="relative min-h-[calc(100svh-5rem)] overflow-hidden bg-cover bg-center" aria-labelledby="hero-title" style="background-image: url('revise-1/01/LINE_ALBUM_01_260825_4.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover;">
+            <div class="home-hero-overlay pointer-events-none absolute inset-0 z-[1]" aria-hidden="true"></div>
             <div class="relative z-10 flex min-h-[calc(100svh-5rem)] items-center bg-white/5 px-6 py-20 sm:px-12 lg:w-[36%] lg:px-10 lg:py-[75px] xl:px-16">
                 <div class="mx-auto flex w-full max-w-xl flex-col items-center text-center">
                     <div class="mb-7 flex w-full justify-center">
@@ -132,7 +134,7 @@
         <section id="series" class="series-section relative scroll-mt-24 overflow-hidden" aria-labelledby="series-title" style="background-color: #f8fbfd; background-image: url('assets/images/series/revise-02/series-background.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover;">
             <div class="series-shell relative z-10 mx-auto">
                 <header class="series-header mx-auto text-center reveal">
-                    <h2 id="series-title" class="series-heading">เลือกตามซีรีส์ <span>(SERIES)</span></h2>
+                    <h2 id="series-title" class="series-heading series-typewriter">เลือกตามซีรีส์ <span>(SERIES)</span></h2>
                     <div class="series-heading-rule" aria-hidden="true"></div>
                     <p class="series-intro">เราคัดสรรวัสดุคุณภาพสูงเพื่อความเหมาะสมกับการใช้งาน ตั้งแต่พื้นที่สาธารณะไปจนถึงอาคารสำนักงานหรู</p>
                 </header>
@@ -196,7 +198,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="solution-visual geometric-bg">
+                <div class="solution-visual">
                     <div class="solution-image-frame reveal delay-100">
                         <img src="assets/images/solution/modern-blue-partition.webp" alt="ผนังห้องน้ำสำเร็จรูปสีน้ำเงินในพื้นที่สมัยใหม่" width="1359" height="1600" loading="lazy">
                     </div>
@@ -209,24 +211,20 @@
                 <div class="mb-12 max-w-3xl reveal">
                     <p class="mb-3 text-xs font-bold uppercase tracking-[0.28em] text-primary">Material configurator</p>
                     <h2 id="material-title" class="text-4xl font-bold leading-tight text-[#c99a3d] md:text-6xl">เลือกสีและวัสดุ<br><span class="text-[#c99a3d]">ให้เข้ากับสไตล์ของคุณ</span></h2>
-                    <p class="mt-5 max-w-2xl text-lg leading-8 text-slate-600">เลือกเฉดสี ลวดลาย และพื้นผิว เพื่อดูตัวอย่างห้องน้ำในแบบที่สะท้อนเอกลักษณ์ของโครงการ</p>
+                    <p class="mt-5 max-w-2xl text-xl leading-8 text-slate-600 md:text-2xl">เลือกเฉดสี ลวดลาย และพื้นผิว เพื่อดูตัวอย่างห้องน้ำในแบบที่สะท้อนเอกลักษณ์ของโครงการ</p>
                 </div>
 
-                <div class="grid gap-8 lg:grid-cols-[1.04fr_0.78fr] lg:items-start">
-                    <div class="overflow-hidden rounded-[2rem] bg-white shadow-soft reveal">
+                <div class="grid gap-8 lg:grid-cols-[1.04fr_0.78fr] lg:items-stretch">
+                    <div class="h-full overflow-hidden rounded-[2rem] bg-white shadow-soft reveal">
                     <div class="relative overflow-hidden bg-slate-100">
-                        <div class="aspect-square sm:aspect-[16/11]">
-                            <img :key="activeModel.id + active.code" :src="active.image" :alt="'ตัวอย่าง ' + activeModel.label + ' สี ' + active.name" src="assets/images/material-selector/colors/hpl-01.jpg" width="2040" height="2048" class="h-full w-full object-cover" aria-live="polite" decoding="async">
-                        </div>
-                        <div class="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-deep/85 via-deep/25 to-transparent px-6 pb-6 pt-24 text-white md:px-9 md:pb-8">
-                            <p class="text-xs font-bold uppercase tracking-[0.25em] text-blue-200">Selected material</p>
-                            <div class="mt-2 flex items-end justify-between gap-4"><div><strong class="text-3xl" x-text="active.code">TH 07</strong><p class="mt-1 text-sm text-white/75" x-text="active.name">Royal Blue</p></div><span class="rounded-full border border-white/30 bg-white/10 px-4 py-2 text-xs font-semibold backdrop-blur" x-text="activeModel.label">HPL 10 mm</span></div>
+                        <div class="aspect-square">
+                            <img :key="activeModel.id + active.code" :src="active.image" :alt="'ตัวอย่าง ' + activeModel.label + ' สี ' + active.name" src="assets/images/material-selector/colors/hpl-01.jpg" width="2040" height="2048" class="h-full w-full object-cover object-center transition duration-300" aria-live="polite" decoding="async">
                         </div>
                     </div>
                     <div class="grid grid-cols-2 border-t border-slate-200 bg-white">
                         <div class="relative flex min-h-[190px] items-center justify-center overflow-hidden bg-white bg-cover bg-center px-5 py-8 text-center md:min-h-[230px] md:px-7" style="background-image: url('assets/images/material-selector/backgrounds/material-info.jpg');">
                             <div>
-                                <p class="text-xs font-bold uppercase tracking-[0.3em] text-primary">Material</p>
+                                <p class="text-xs font-bold uppercase tracking-[0.3em] text-primary">รหัสสีของสินค้า</p>
                                 <strong class="mt-4 block text-4xl font-bold leading-none text-primary md:text-6xl" x-text="active.code">TH 01</strong>
                                 <p class="mt-3 text-base font-semibold text-primary md:text-lg" x-text="active.name">Pure White</p>
                             </div>
@@ -239,14 +237,14 @@
                     </div>
                     </div>
 
-                    <div class="relative z-10 rounded-[2rem] border border-slate-200 bg-[#F8FAFC] p-5 shadow-soft md:p-7 reveal delay-100 lg:-mt-[245px]">
+                    <div class="relative z-10 h-full rounded-[2rem] border border-slate-200 bg-[#F8FAFC] p-5 shadow-soft md:p-7 reveal delay-100">
                         <div class="border-b border-slate-200 pb-5">
                             <div class="flex items-center justify-between gap-3">
                                 <div><p class="text-[10px] font-bold uppercase tracking-[0.28em] text-slate-400">Configuration</p><h3 class="mt-1 text-2xl font-bold text-primary">เลือกวัสดุและสี</h3></div>
                                 <span class="rounded-full bg-white px-3 py-2 text-xs font-bold text-slate-500 shadow-sm" x-text="activeModel.colors.length + ' สี'">14 สี</span>
                             </div>
-                            <div class="mt-5 grid items-stretch gap-3 sm:grid-cols-[0.78fr_1.9fr]" role="group" aria-label="เลือกวัสดุและสีตามรุ่น">
-                                <div class="h-full rounded-2xl border border-blue-200 bg-white p-2.5">
+                            <div class="mt-5 grid items-start gap-3 sm:grid-cols-[0.78fr_1.9fr]" role="group" aria-label="เลือกวัสดุและสีตามรุ่น">
+                                <div class="rounded-2xl border border-blue-200 bg-white p-2.5">
                                     <div class="rounded-xl bg-primary px-2 py-2 text-center text-sm font-bold text-white">กันชื้น</div>
                                     <div class="mt-2 flex gap-1.5">
                                         <button type="button" @click="chooseById('pb-18')" :aria-pressed="activeModel.id === 'pb-18'" :class="activeModel.id === 'pb-18' ? 'bg-primary text-white' : 'bg-white text-slate-700 hover:bg-blue-50'" class="min-h-9 flex-1 rounded-lg border border-slate-200 px-1 text-[10px] font-bold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary">PB 18 mm</button>
@@ -254,33 +252,30 @@
                                     </div>
                                     <div class="pb-material-grid mt-2 grid grid-cols-4 gap-1 lg:grid-cols-2">
                                         <template x-for="material in colorsFor('pb-18')" :key="'pb-' + material.code">
-                                            <button type="button" @click="chooseById(activeModel.id.startsWith('pb-') ? activeModel.id : 'pb-18'); select(material)" :aria-label="'เลือกสี PB ' + material.code" :class="active.code === material.code && activeModel.family === 'pb' ? 'border-primary ring-2 ring-primary/20' : 'border-slate-200 hover:border-primary'" class="overflow-hidden rounded-lg border bg-white p-1 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"><img :src="material.image" :alt="'PB สี ' + material.name + ' ' + material.code" class="aspect-square w-full rounded object-cover"><span class="mt-1 block truncate text-center text-[9px] font-bold text-slate-500" x-text="material.code"></span></button>
+                                            <button type="button" @click="chooseById(activeModel.id.startsWith('pb-') ? activeModel.id : 'pb-18'); select(material)" :aria-label="'เลือกสี PB ' + material.name + ' ' + material.code" :class="(active.code === material.code && activeModel.family === 'pb' ? 'border-primary ring-2 ring-primary/20' : 'border-slate-200 hover:border-primary') + (material.code === 'TP 01' ? ' !p-0 aspect-square' : '')" class="overflow-hidden rounded-lg border bg-white p-1 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"><img :src="material.swatch" :alt="'PB สี ' + material.name + ' ' + material.code" :class="material.code === 'TP 01' ? 'hidden' : ''" class="aspect-square w-full rounded object-cover"></button>
                                         </template>
                                     </div>
-                                    <p class="mt-2 text-center text-[9px] text-slate-400">Particle Board</p>
                                 </div>
-                                <div class="h-full rounded-2xl border border-blue-200 bg-white p-2.5">
+                                <div class="rounded-2xl border border-blue-200 bg-white p-2.5">
                                     <div class="rounded-xl bg-primary px-2 py-2 text-center text-sm font-bold text-white">กันน้ำ 100%</div>
-                                    <div class="mt-2 grid grid-cols-2 items-stretch gap-2">
-                                        <div class="h-full rounded-xl border border-slate-200 p-1.5">
+                                    <div class="mt-2 grid grid-cols-2 items-start gap-2">
+                                        <div class="rounded-xl border border-slate-200 p-1.5">
                                             <div class="flex items-center justify-between gap-1"><span class="text-[11px] font-bold text-primary">HPL</span><span class="text-[9px] text-slate-400">10/13 mm</span></div>
-                                            <div class="mt-1 flex gap-1"><button type="button" @click="chooseById('hpl-10')" :aria-pressed="activeModel.id === 'hpl-10'" :class="activeModel.id === 'hpl-10' ? 'bg-primary text-white' : 'bg-slate-100 text-slate-700'" class="min-h-8 flex-1 rounded border px-1 text-[9px] font-bold">10 mm</button><button type="button" @click="chooseById('hpl-13')" :aria-pressed="activeModel.id === 'hpl-13'" :class="activeModel.id === 'hpl-13' ? 'bg-primary text-white' : 'bg-slate-100 text-slate-700'" class="min-h-8 flex-1 rounded border px-1 text-[9px] font-bold">13 mm</button></div>
-                                            <div class="mt-2 grid grid-cols-2 gap-1.5">
+                                            <div class="mt-1 flex gap-1.5"><button type="button" @click="chooseById('hpl-10')" :aria-pressed="activeModel.id === 'hpl-10'" :class="activeModel.id === 'hpl-10' ? 'bg-primary text-white' : 'bg-slate-100 text-slate-700'" class="min-h-9 flex-1 rounded-lg border border-slate-200 px-1 text-[10px] font-bold">10 mm</button><button type="button" @click="chooseById('hpl-13')" :aria-pressed="activeModel.id === 'hpl-13'" :class="activeModel.id === 'hpl-13' ? 'bg-primary text-white' : 'bg-slate-100 text-slate-700'" class="min-h-9 flex-1 rounded-lg border border-slate-200 px-1 text-[10px] font-bold">13 mm</button></div>
+                                            <div class="water-material-grid mt-2 grid grid-cols-2 gap-1.5 sm:grid-cols-5 lg:grid-cols-3">
                                                 <template x-for="material in colorsFor('hpl-10')" :key="'hpl-' + material.code">
-                                                    <button type="button" @click="chooseById(activeModel.id.startsWith('hpl-') ? activeModel.id : 'hpl-10'); select(material)" :aria-label="'เลือกสี HPL ' + material.code" :class="active.code === material.code && activeModel.family === 'hpl' ? 'border-primary ring-1 ring-primary/30' : 'border-slate-200 hover:border-primary'" class="overflow-hidden rounded border bg-white p-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"><img :src="material.image" :alt="'HPL สี ' + material.name + ' ' + material.code" class="aspect-square w-full rounded-sm object-cover"></button>
+                                                    <button type="button" @click="chooseById(activeModel.id.startsWith('hpl-') ? activeModel.id : 'hpl-10'); select(material)" :aria-label="'เลือกสี HPL ' + material.name + ' ' + material.code" :class="(active.code === material.code && activeModel.family === 'hpl' ? 'border-primary ring-2 ring-primary/20' : 'border-slate-200 hover:border-primary') + (material.code === 'TH 01' ? ' aspect-square' : '')" class="overflow-hidden rounded-lg border bg-white p-1 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"><img :src="material.swatch" :alt="'HPL สี ' + material.name + ' ' + material.code" :class="material.code === 'TH 01' ? 'hidden' : ''" class="aspect-square w-full rounded object-cover"></button>
                                                 </template>
                                             </div>
-                                            <p class="mt-1 text-center text-[8px] text-slate-400">High Pressure Laminate</p>
                                         </div>
-                                        <div class="h-full rounded-xl border border-slate-200 p-1.5">
+                                        <div class="rounded-xl border border-slate-200 p-1.5">
                                             <div class="flex items-center justify-between gap-1"><span class="text-[11px] font-bold text-primary">MFF</span><span class="text-[9px] text-slate-400">25/30 mm</span></div>
-                                            <div class="mt-1 flex gap-1"><button type="button" @click="chooseById('mff-25')" :aria-pressed="activeModel.id === 'mff-25'" :class="activeModel.id === 'mff-25' ? 'bg-primary text-white' : 'bg-slate-100 text-slate-700'" class="min-h-8 flex-1 rounded border px-1 text-[9px] font-bold">25 mm</button><button type="button" @click="chooseById('mff-30')" :aria-pressed="activeModel.id === 'mff-30'" :class="activeModel.id === 'mff-30' ? 'bg-primary text-white' : 'bg-slate-100 text-slate-700'" class="min-h-8 flex-1 rounded border px-1 text-[9px] font-bold">30 mm</button></div>
-                                            <div class="mt-2 grid grid-cols-2 gap-1.5">
+                                            <div class="mt-1 flex gap-1.5"><button type="button" @click="chooseById('mff-25')" :aria-pressed="activeModel.id === 'mff-25'" :class="activeModel.id === 'mff-25' ? 'bg-primary text-white' : 'bg-slate-100 text-slate-700'" class="min-h-9 flex-1 rounded-lg border border-slate-200 px-1 text-[10px] font-bold">25 mm</button><button type="button" @click="chooseById('mff-30')" :aria-pressed="activeModel.id === 'mff-30'" :class="activeModel.id === 'mff-30' ? 'bg-primary text-white' : 'bg-slate-100 text-slate-700'" class="min-h-9 flex-1 rounded-lg border border-slate-200 px-1 text-[10px] font-bold">30 mm</button></div>
+                                            <div class="water-material-grid mt-2 grid grid-cols-2 gap-1.5 sm:grid-cols-5 lg:grid-cols-3">
                                                 <template x-for="material in colorsFor(activeModel.id === 'mff-30' ? 'mff-30' : 'mff-25')" :key="activeModel.id + '-' + material.code">
-                                                    <button type="button" @click="chooseById(activeModel.id.startsWith('mff-') ? activeModel.id : 'mff-25'); select(material)" :aria-label="'เลือกสี MFF ' + material.code" :class="active.code === material.code && activeModel.family === 'mff' ? 'border-primary ring-1 ring-primary/30' : 'border-slate-200 hover:border-primary'" class="overflow-hidden rounded border bg-white p-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"><img :src="material.image" :alt="'MFF สี ' + material.name + ' ' + material.code" class="aspect-square w-full rounded-sm object-cover"></button>
+                                                    <button type="button" @click="chooseById(activeModel.id.startsWith('mff-') ? activeModel.id : 'mff-25'); select(material)" :aria-label="'เลือกสี MFF ' + material.name + ' ' + material.code" :class="active.code === material.code && activeModel.family === 'mff' ? 'border-primary ring-2 ring-primary/20' : 'border-slate-200 hover:border-primary'" class="overflow-hidden rounded-lg border bg-white p-1 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"><img :src="material.swatch" :alt="'MFF สี ' + material.name + ' ' + material.code" class="aspect-square w-full rounded object-cover"></button>
                                                 </template>
                                             </div>
-                                            <p class="mt-1 text-center text-[8px] text-slate-400">Melamine Faced Foam Board</p>
                                         </div>
                                     </div>
                                 </div>
@@ -341,8 +336,7 @@
         <section class="faq-showcase py-20 md:py-28" aria-labelledby="faq-title" style="background-image: url('assets/images/works/revise-04/section-background.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover;">
             <div class="mx-auto grid max-w-[1320px] items-stretch gap-10 px-5 md:px-10 lg:grid-cols-[0.85fr_1.15fr]">
                 <div class="relative min-h-[420px] overflow-hidden rounded-[2rem] reveal">
-                    <img src="assets/images/works/revise-04/faq-room.jpg" alt="ตัวอย่างผนังห้องน้ำสำเร็จรูปสีดำ" width="1565" height="2048" loading="lazy" class="absolute inset-0 h-full w-full object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-t from-deep/35 to-transparent"></div>
+                    <img src="assets/images/works/revise-04/faq-room.jpg" alt="ตัวอย่างผนังห้องน้ำสำเร็จรูปสีดำ" width="1565" height="2048" loading="lazy" class="faq-room-fade absolute inset-0 h-full w-full object-cover">
                 </div>
                 <div class="flex flex-col justify-center reveal delay-100" x-data="{ active: 1 }">
                     <p class="mb-3 text-xs font-bold uppercase tracking-[0.28em] text-primary">Frequently asked questions</p>
@@ -368,7 +362,7 @@
 
         <section class="relative overflow-hidden py-20 text-center md:py-28" aria-labelledby="cta-title">
             <img src="assets/images/contact-cta-pdf.png" alt="" width="1919" height="447" loading="lazy" class="absolute inset-0 h-full w-full object-cover" aria-hidden="true">
-            <div class="absolute inset-0 bg-white/55 backdrop-blur-[1px]"></div>
+            <div class="absolute inset-0 bg-white/20 backdrop-blur-[1px]"></div>
             <div class="relative z-10 mx-auto max-w-4xl px-5 reveal">
                 <div class="relative left-1/2 w-screen -translate-x-1/2 bg-white/80 px-5 py-4 md:py-5">
                     <h2 id="cta-title" class="text-4xl font-bold leading-tight text-[#c99a3d] md:text-6xl">พร้อมสร้างความแตกต่าง<br>ในโครงการของคุณหรือยัง</h2>
@@ -385,11 +379,11 @@
       <div class="grid gap-12 border-b border-white/10 pb-12 md:grid-cols-2 lg:grid-cols-[1.5fr_0.7fr_1fr]">
         <div>
           <a href="index.html" class="inline-flex items-center gap-4 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300"><span class="site-footer-wordmark" aria-label="The Toilet Partition">The Toilet Partition</span></a>
-          <p class="mt-6 max-w-md leading-7 text-white/55">ยกระดับมาตรฐานพื้นที่ส่วนตัวด้วยวัสดุระดับมืออาชีพ ที่สถาปนิกและโครงการชั้นนำเลือกใช้</p>
+          <p class="mt-6 max-w-md leading-7 text-white/55">ยกระดับมาตรฐานพื้นที่ส่วนตัวด้วยวัสดุระดับเวิลด์คลาส ที่สถาปนิกและโครงการชั้นนำเลือกใช้</p>
           <div class="mt-6 flex gap-3"><a href="https://facebook.com/Mhcgroupproduct" target="_blank" rel="noopener noreferrer" class="social-link facebook-social-link" aria-label="Facebook MHC Group Product"><span class="social-facebook-icon" aria-hidden="true"></span></a><a href="https://lin.ee/Qa5ogwp" target="_blank" rel="noopener noreferrer" class="social-link line-social-link" aria-label="แอดไลน์ MHC Group"><span class="line-social-icon" aria-hidden="true"></span></a></div>
         </div>
         <div><h2 class="footer-heading">Navigation</h2><ul class="mt-5 space-y-3 text-sm font-medium text-white/55"><li><a href="index.html" class="footer-link">หน้าแรก</a></li><li><a href="about.html" class="footer-link">เกี่ยวกับเรา</a></li><li><a href="products.html" class="footer-link">สินค้าของเรา</a></li><li><a href="works.html" class="footer-link">ผลงานของเรา</a></li></ul></div>
-        <div><h2 class="footer-heading">Contact info</h2><ul class="mt-5 space-y-4 text-sm text-white/55"><li class="flex gap-3"><svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 flex-none text-blue-300" fill="none" stroke="currentColor" aria-hidden="true"><path d="M12 21s7-5.2 7-12a7 7 0 10-14 0c0 6.8 7 12 7 12z" stroke-width="1.8"/><circle cx="12" cy="9" r="2.5" stroke-width="1.8"/></svg><span>99/159 ม.2 ต.ท่าเสา อ.กระทุ่มแบน<br>จ.สมุทรสาคร 74110</span></li><li><a href="tel:0893553444" class="footer-link flex gap-3"><svg viewBox="0 0 24 24" class="h-5 w-5 flex-none text-blue-300" fill="none" stroke="currentColor" aria-hidden="true"><path d="M7 3H4a1 1 0 00-1 1c0 9.4 7.6 17 17 17a1 1 0 001-1v-3l-4-2-2 2c-3.5-1.5-6.5-4.5-8-8l2-2-2-4z" stroke-width="1.7" stroke-linejoin="round"/></svg>089-3553-444</a></li><li><a href="mailto:sale_mhc@hotmail.com" class="footer-link flex gap-3"><svg viewBox="0 0 24 24" class="h-5 w-5 flex-none text-blue-300" fill="none" stroke="currentColor" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" stroke-width="1.7"/><path d="M4 7l8 6 8-6" stroke-width="1.7" stroke-linejoin="round"/></svg>sale_mhc@hotmail.com</a></li></ul></div>
+        <div><h2 class="footer-heading">Contact info</h2><ul class="mt-5 space-y-4 text-sm text-white/55"><li class="flex gap-3"><svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 flex-none text-blue-300" fill="none" stroke="currentColor" aria-hidden="true"><path d="M12 21s7-5.2 7-12a7 7 0 10-14 0c0 6.8 7 12 7 12z" stroke-width="1.8"/><circle cx="12" cy="9" r="2.5" stroke-width="1.8"/></svg><span>99/159 ม.2 ต.ท่าเสา อ.กระทุ่มแบน<br>จ.สมุทรสาคร 74110</span></li><li><a href="tel:0893553444" class="footer-link flex gap-3"><svg viewBox="0 0 24 24" class="h-5 w-5 flex-none text-blue-300" fill="none" stroke="currentColor" aria-hidden="true"><path d="M7 3H4a1 1 0 00-1 1c0 9.4 7.6 17 17 17a1 1 0 001-1v-3l-4-2-2 2c-3.5-1.5-6.5-4.5-8-8l2-2-2-4z" stroke-width="1.7" stroke-linejoin="round"/></svg>089-3553-444</a></li><li><a href="mailto:mhcgroup44@gmail.com" class="footer-link flex gap-3"><svg viewBox="0 0 24 24" class="h-5 w-5 flex-none text-blue-300" fill="none" stroke="currentColor" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" stroke-width="1.7"/><path d="M4 7l8 6 8-6" stroke-width="1.7" stroke-linejoin="round"/></svg>mhcgroup44@gmail.com</a></li></ul></div>
       </div>
       <div class="flex flex-col gap-3 pt-7 text-xs font-medium text-white/35 sm:flex-row sm:items-center sm:justify-between"><p>&copy; 2026 MHC Group Products Co., Ltd.</p><p>The Toilet Partition - Premium Solutions</p></div>
     </div>

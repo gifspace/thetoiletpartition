@@ -5,11 +5,28 @@ document.documentElement.classList.add('js');
 document.addEventListener('DOMContentLoaded', () => {
     const siteHeader = document.querySelector('.site-header');
     const syncHeaderState = () => {
-        if (siteHeader) siteHeader.classList.toggle('header-scrolled', window.scrollY > 12);
+        if (!siteHeader) return;
+
+        siteHeader.classList.toggle('header-scrolled', window.scrollY > 12);
+
+        // On tablet/mobile, reveal the compact brand badge after 15% page progress.
+        const isTabletOrMobile = window.matchMedia('(max-width: 79.9375rem)').matches;
+        const maxScroll = Math.max(document.documentElement.scrollHeight - window.innerHeight, 0);
+        const scrollProgress = maxScroll > 0 ? window.scrollY / maxScroll : 0;
+        siteHeader.classList.toggle('mobile-brand-visible', isTabletOrMobile && scrollProgress >= 0.15);
     };
 
     syncHeaderState();
     window.addEventListener('scroll', syncHeaderState, { passive: true });
+    window.addEventListener('resize', syncHeaderState, { passive: true });
+
+    const siteFooter = document.querySelector('.site-footer');
+    if (siteHeader && siteFooter && 'IntersectionObserver' in window) {
+        const footerObserver = new IntersectionObserver(([entry]) => {
+            siteHeader.classList.toggle('footer-visible', entry.isIntersecting);
+        }, { threshold: 0.05 });
+        footerObserver.observe(siteFooter);
+    }
 
     const revealElements = document.querySelectorAll('.reveal');
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -103,18 +120,25 @@ function enhanceProductPage() {
 function materialSelector() {
     const hplCodes = ['TH 01', 'TH 02', 'TH 03', 'TH 05', 'TH 06', 'TH 07', 'TH 08', 'TH 09', 'TH 22', 'TH 23', 'TH 24', 'TH 26', 'TH 33', 'TH 34'];
     const hplNames = ['Pure White', 'Ivory White', 'Soft Grey', 'Lime Green', 'Sky Blue', 'Royal Blue', 'Blush Pink', 'Energy Orange', 'Walnut Brown', 'Ash Texture', 'Natural Oak', 'Golden Oak', 'White Marble', 'Black Marble'];
-    const hplColors = hplCodes.map((code, index) => ({ code, name: hplNames[index], image: `assets/images/material-selector/colors/hpl-${String(index + 1).padStart(2, '0')}.jpg`, swatch: `assets/images/material-selector/colors/swatches/hpl-${String(index + 1).padStart(2, '0')}.jpg` }));
+    const hplImageOrder = [1, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2];
+    const hplSwatchOrder = [14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 3, 4, 2, 1];
+    const hplColors = hplCodes.map((code, index) => ({ code, name: hplNames[index], image: `assets/images/material-selector/colors/hpl-${String(hplImageOrder[index]).padStart(2, '0')}.jpg`, swatch: `revise-2/HPL/LINE_ALBUM_HPL_260902_${hplSwatchOrder[index]}.jpg` }));
 
     const pbCodes = ['TP 34', 'TP 33', 'TP 23', 'TP 22', 'TP 21', 'TP 11', 'TP 10', 'TP 07', 'TP 03', 'TP 02', 'TP 01'];
     const pbNames = ['Black Marble', 'White Marble', 'Light Oak', 'Walnut Oak', 'Natural Oak', 'Charcoal', 'Black', 'Royal Blue', 'Soft Grey', 'Cream', 'Pure White'];
-    const pbColors = pbCodes.map((code, index) => ({ code, name: pbNames[index], image: `assets/images/material-selector/colors/pb-${String(index + 1).padStart(2, '0')}.jpg`, swatch: `assets/images/material-selector/colors/swatches/pb-${String(index + 1).padStart(2, '0')}.jpg` }));
+    const pbSwatchOrder = [1, 2, 4, 3, 5, 6, 7, 8, 9, 10, 11];
+    const pbSwatches = pbSwatchOrder.map((swatch, index) => index === pbSwatchOrder.length - 1 ? 'revise-2/HPL/LINE_ALBUM_HPL_260902_14.jpg' : `revise-2/PB18-28/LINE_ALBUM_18-28_260902_${swatch}.jpg`);
+    const pbColors = pbCodes.map((code, index) => ({ code, name: pbNames[index], image: `assets/images/material-selector/colors/pb-${String(index + 1).padStart(2, '0')}.jpg`, swatch: pbSwatches[index] }));
 
-    const mff25Codes = ['907', '914', '222', '910', '936', '6652', '8184', '8433', '927'];
+    const mff25Codes = ['907', '914', '222', '910', '936', '6652', '8433', '8184', '927'];
     const mff25Names = ['Sky Blue', 'Mint Green', 'Beige', 'Pink', 'Orange', 'Ash Brown', 'Walnut', 'Dark Walnut', 'Brown Oak'];
-    const mff25Colors = mff25Codes.map((code, index) => ({ code, name: mff25Names[index], image: `assets/images/material-selector/colors/mff25-${String(index + 1).padStart(2, '0')}.jpg`, swatch: `assets/images/material-selector/colors/swatches/mff25-${String(index + 1).padStart(2, '0')}.jpg` }));
+    const mff25SwatchOrder = [6, 4, 7, 5, 3, 2, 8, 1, 9];
+    const mff25Colors = mff25Codes.map((code, index) => ({ code, name: mff25Names[index], image: `assets/images/material-selector/colors/mff25-${String(index + 1).padStart(2, '0')}.jpg`, swatch: `revise-2/MFF25-30/LINE_ALBUM_MFF25-30_260902_${mff25SwatchOrder[index]}.jpg` }));
     const mff30Codes = ['8184', '927', '8433', '907', '914', '222', '910', '936', '6652'];
-    const mff30Names = ['Walnut', 'Brown Oak', 'Dark Walnut', 'Sky Blue', 'Mint Green', 'Beige', 'Pink', 'Orange', 'Ash Brown'];
-    const mff30Colors = mff30Codes.map((code, index) => ({ code, name: mff30Names[index], image: `assets/images/material-selector/colors/mff30-${String(index + 1).padStart(2, '0')}.jpg`, swatch: `assets/images/material-selector/colors/swatches/mff30-${String(index + 1).padStart(2, '0')}.jpg` }));
+    const mff30Names = ['Dark Walnut', 'Brown Oak', 'Walnut', 'Sky Blue', 'Mint Green', 'Beige', 'Pink', 'Orange', 'Ash Brown'];
+    const mff30ImageOrder = [1, 2, 9, 3, 4, 5, 6, 7, 8];
+    const mff30SwatchOrder = [1, 2, 8, 6, 4, 7, 5, 3, 9];
+    const mff30Colors = mff30Codes.map((code, index) => ({ code, name: mff30Names[index], image: `assets/images/material-selector/colors/mff30-${String(mff30ImageOrder[index]).padStart(2, '0')}.jpg`, swatch: `revise-2/MFF25-30/LINE_ALBUM_MFF25-30_260902_${mff30SwatchOrder[index]}.jpg` }));
 
     const models = [
         { id: 'hpl-10', family: 'hpl', label: 'HPL 10 mm', series: 'HPL Series', thickness: '10 mm', surface: 'High Pressure Laminate', document: 'assets/images/material-selector/docs/hpl.jpg', colors: hplColors },
