@@ -461,7 +461,7 @@ html {
   border-radius: 15px;
   background: #fff;
   padding: 0;
-  content: url('../../revise-1/05/LINE_ALBUM_05_260825_2.jpg');
+  content: url('../../revise-1/05/LINE_ALBUM_05_260825_2.webp');
   object-fit: contain;
 }
 
@@ -482,7 +482,7 @@ html {
   width: clamp(10.5rem, 18vw, 15rem);
   height: clamp(3.6rem, 6vw, 4.5rem);
   border-radius: 15px;
-  background: #fff url('../../revise-1/05/LINE_ALBUM_05_260825_2.jpg') center / contain no-repeat;
+  background: #fff url('../../revise-1/05/LINE_ALBUM_05_260825_2.webp') center / contain no-repeat;
   font-size: 0;
   line-height: 0;
   box-shadow: 0 8px 20px rgba(8, 23, 46, 0.16);
@@ -1639,7 +1639,7 @@ html {
   width: 2.25rem;
   height: 2.25rem;
   display: block;
-  background: url('../images/line-icon.png') center / contain no-repeat;
+  background: url('../images/line-icon.webp') center / contain no-repeat;
 }
 
 .line-cta-icon {
@@ -1647,7 +1647,7 @@ html {
   height: 1.5rem;
   flex: none;
   display: block;
-  background: url('../images/line-icon.png') center / contain no-repeat;
+  background: url('../images/line-icon.webp') center / contain no-repeat;
 }
 
 .line-contact-icon-only {
@@ -1730,7 +1730,7 @@ html {
   width: 2.25rem;
   height: 2.25rem;
   display: block;
-  background: url('../images/facebook-icon.png') center / contain no-repeat;
+  background: url('../images/facebook-icon.webp') center / contain no-repeat;
 }
 
 .site-footer .mt-6.flex.gap-3 {
@@ -1771,7 +1771,7 @@ html {
   width: 4rem;
   height: 4rem;
   display: block;
-  background: url('../images/line-icon.png') center / contain no-repeat;
+  background: url('../images/line-icon.webp') center / contain no-repeat;
 }
 
 .contact-hero-image {

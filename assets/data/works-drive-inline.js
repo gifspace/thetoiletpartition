@@ -2538,17 +2538,17 @@ window.WORKS_DRIVE_DATA={
             {
               "id": "1SxJLKw82VEM5c9OwfpDtEkl3cHiph-LH",
               "title": "ดูรีเฟล็กซ์03.jpg",
-              "localPath": "assets/portfolio-imgs/th-03-4/img-1.jpg"
+              "localPath": "assets/portfolio-imgs/th-03-4/img-1.webp"
             },
             {
               "id": "1J9iv-reocQSSBt-q4V07h-v2KpUuMnhI",
               "title": "ดูรีเฟล็กซ์02.jpg",
-              "localPath": "assets/portfolio-imgs/th-03-4/img-2.jpg"
+              "localPath": "assets/portfolio-imgs/th-03-4/img-2.webp"
             },
             {
               "id": "1qiY04CNGznv2zJycyPWKoym76hM_is0g",
               "title": "ดูรีเฟล็กซ์01.jpg",
-              "localPath": "assets/portfolio-imgs/th-03-4/img-3.jpg"
+              "localPath": "assets/portfolio-imgs/th-03-4/img-3.webp"
             }
           ]
         }

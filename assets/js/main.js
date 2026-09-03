@@ -97,8 +97,8 @@ function enhanceProductPage() {
     if (!family) return;
 
     if (isMff30) {
-        document.querySelectorAll('[src*="mff-25.jpg"]').forEach((image) => {
-            image.src = image.src.replace('mff-25.jpg', 'mff-30.jpg');
+        document.querySelectorAll('[src*="mff-25.webp"]').forEach((image) => {
+            image.src = image.src.replace('mff-25.webp', 'mff-30.webp');
             image.alt = 'เอกสารสเปกวัสดุ MFF 30 mm';
         });
         document.querySelectorAll('h1').forEach((heading) => { if (heading.textContent.includes('COMPACT')) heading.textContent = 'MFF 30 mm'; });
@@ -133,16 +133,16 @@ function enhanceProductPage() {
     if (!root || root.querySelector('[data-material-reference]')) return;
 
     const definitions = {
-        hpl: { label: 'HPL 10/13 mm', document: '../assets/images/material-selector/docs/hpl.jpg', alt: 'สเปกวัสดุ HPL 10/13 mm' },
-        pb: { label: 'PB 18/28 mm', document: '../assets/images/material-selector/docs/pb.jpg', alt: 'สเปกวัสดุ PB 18/28 mm' },
-        mff25: { label: 'MFF 25 mm', document: '../assets/images/material-selector/docs/mff-25.jpg', alt: 'สเปกวัสดุ MFF 25 mm' },
-        mff30: { label: 'MFF 30 mm', document: '../assets/images/material-selector/docs/mff-30.jpg', alt: 'สเปกวัสดุ MFF 30 mm' }
+        hpl: { label: 'HPL 10/13 mm', document: '../assets/images/material-selector/docs/hpl.webp', alt: 'สเปกวัสดุ HPL 10/13 mm' },
+        pb: { label: 'PB 18/28 mm', document: '../assets/images/material-selector/docs/pb.webp', alt: 'สเปกวัสดุ PB 18/28 mm' },
+        mff25: { label: 'MFF 25 mm', document: '../assets/images/material-selector/docs/mff-25.webp', alt: 'สเปกวัสดุ MFF 25 mm' },
+        mff30: { label: 'MFF 30 mm', document: '../assets/images/material-selector/docs/mff-30.webp', alt: 'สเปกวัสดุ MFF 30 mm' }
     };
     const material = isMff25 ? definitions.mff25 : isMff30 ? definitions.mff30 : definitions[family];
     const colors = isMff25
         ? [['907', 'Sky Blue'], ['914', 'Mint Green'], ['222', 'Beige'], ['910', 'Pink'], ['936', 'Orange'], ['6652', 'Ash Brown'], ['8184', 'Walnut'], ['8433', 'Dark Walnut'], ['927', 'Brown Oak']]
         : [['8184', 'Walnut'], ['927', 'Brown Oak'], ['8433', 'Dark Walnut'], ['907', 'Sky Blue'], ['914', 'Mint Green'], ['222', 'Beige'], ['910', 'Pink'], ['936', 'Orange'], ['6652', 'Ash Brown']];
-    const colorSection = (isMff25 || isMff30) ? `<section class="mt-16" aria-labelledby="company-colors"><h2 id="company-colors" class="mb-8 text-center text-3xl font-bold text-primary">สีมาตรฐาน ${material.label}</h2><div class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">${colors.map((color, index) => `<figure class="overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm"><img src="../assets/images/material-selector/colors/${isMff25 ? 'mff25' : 'mff30'}-${String(index + 1).padStart(2, '0')}.jpg" alt="${material.label} สี ${color[1]} รหัส ${color[0]}" class="aspect-square w-full object-cover"><figcaption class="p-3 text-center text-xs font-bold text-primary">${color[1]} · ${color[0]}</figcaption></figure>`).join('')}</div></section>` : '';
+    const colorSection = (isMff25 || isMff30) ? `<section class="mt-16" aria-labelledby="company-colors"><h2 id="company-colors" class="mb-8 text-center text-3xl font-bold text-primary">สีมาตรฐาน ${material.label}</h2><div class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">${colors.map((color, index) => `<figure class="overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm"><img src="../assets/images/material-selector/colors/${isMff25 ? 'mff25' : 'mff30'}-${String(index + 1).padStart(2, '0')}.webp" alt="${material.label} สี ${color[1]} รหัส ${color[0]}" class="aspect-square w-full object-cover"><figcaption class="p-3 text-center text-xs font-bold text-primary">${color[1]} · ${color[0]}</figcaption></figure>`).join('')}</div></section>` : '';
 
     root.insertAdjacentHTML('beforeend', `<section data-material-reference class="mt-16 rounded-3xl border border-slate-100 bg-slate-50 p-6 md:p-10" aria-labelledby="material-reference"><div class="grid items-center gap-8 md:grid-cols-[0.42fr_0.58fr]"><div><span class="text-xs font-bold uppercase tracking-[0.25em] text-secondary">Material Reference</span><h2 id="material-reference" class="mt-3 text-2xl font-bold text-primary">วัสดุของรุ่นนี้</h2><p class="mt-4 leading-7 text-slate-600">ภาพวัสดุจากเอกสารบริษัทที่ตรงกับซีรีส์ของสินค้ารุ่นนี้</p></div><a href="${material.document}" target="_blank" rel="noopener noreferrer" class="overflow-hidden rounded-2xl bg-white p-2 shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"><img src="${material.document}" alt="${material.alt}" class="w-full rounded-xl object-contain"></a></div></section>${colorSection}`);
 }
@@ -152,31 +152,31 @@ function materialSelector() {
     const hplNames = ['Pure White', 'Ivory White', 'Soft Grey', 'Lime Green', 'Sky Blue', 'Royal Blue', 'Blush Pink', 'Energy Orange', 'Walnut Brown', 'Ash Texture', 'Natural Oak', 'Golden Oak', 'White Marble', 'Black Marble'];
     const hplImageOrder = [1, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2];
     const hplSwatchOrder = [14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 3, 4, 2, 1];
-    const hplColors = hplCodes.map((code, index) => ({ code, name: hplNames[index], image: `assets/images/material-selector/colors/hpl-${String(hplImageOrder[index]).padStart(2, '0')}.jpg`, swatch: `revise-2/HPL/LINE_ALBUM_HPL_260902_${hplSwatchOrder[index]}.jpg` }));
+    const hplColors = hplCodes.map((code, index) => ({ code, name: hplNames[index], image: `assets/images/material-selector/colors/hpl-${String(hplImageOrder[index]).padStart(2, '0')}.webp`, swatch: `revise-2/HPL/LINE_ALBUM_HPL_260902_${hplSwatchOrder[index]}.webp` }));
 
     const pbCodes = ['TP 34', 'TP 33', 'TP 23', 'TP 22', 'TP 21', 'TP 11', 'TP 10', 'TP 07', 'TP 03', 'TP 02', 'TP 01'];
     const pbNames = ['Black Marble', 'White Marble', 'Light Oak', 'Walnut Oak', 'Natural Oak', 'Charcoal', 'Black', 'Royal Blue', 'Soft Grey', 'Cream', 'Pure White'];
     const pbSwatchOrder = [1, 2, 4, 3, 5, 6, 7, 8, 9, 10, 11];
-    const pbSwatches = pbSwatchOrder.map((swatch, index) => index === pbSwatchOrder.length - 1 ? 'revise-2/HPL/LINE_ALBUM_HPL_260902_14.jpg' : `revise-2/PB18-28/LINE_ALBUM_18-28_260902_${swatch}.jpg`);
-    const pbColors = pbCodes.map((code, index) => ({ code, name: pbNames[index], image: `assets/images/material-selector/colors/pb-${String(index + 1).padStart(2, '0')}.jpg`, swatch: pbSwatches[index] }));
+    const pbSwatches = pbSwatchOrder.map((swatch, index) => index === pbSwatchOrder.length - 1 ? 'revise-2/HPL/LINE_ALBUM_HPL_260902_14.webp' : `revise-2/PB18-28/LINE_ALBUM_18-28_260902_${swatch}.webp`);
+    const pbColors = pbCodes.map((code, index) => ({ code, name: pbNames[index], image: `assets/images/material-selector/colors/pb-${String(index + 1).padStart(2, '0')}.webp`, swatch: pbSwatches[index] }));
 
     const mff25Codes = ['907', '914', '222', '910', '936', '6652', '8433', '8184', '927'];
     const mff25Names = ['Sky Blue', 'Mint Green', 'Beige', 'Pink', 'Orange', 'Ash Brown', 'Walnut', 'Dark Walnut', 'Brown Oak'];
     const mff25SwatchOrder = [6, 4, 7, 5, 3, 2, 8, 1, 9];
-    const mff25Colors = mff25Codes.map((code, index) => ({ code, name: mff25Names[index], image: `assets/images/material-selector/colors/mff25-${String(index + 1).padStart(2, '0')}.jpg`, swatch: `revise-2/MFF25-30/LINE_ALBUM_MFF25-30_260902_${mff25SwatchOrder[index]}.jpg` }));
+    const mff25Colors = mff25Codes.map((code, index) => ({ code, name: mff25Names[index], image: `assets/images/material-selector/colors/mff25-${String(index + 1).padStart(2, '0')}.webp`, swatch: `revise-2/MFF25-30/LINE_ALBUM_MFF25-30_260902_${mff25SwatchOrder[index]}.webp` }));
     const mff30Codes = ['8184', '927', '8433', '907', '914', '222', '910', '936', '6652'];
     const mff30Names = ['Dark Walnut', 'Brown Oak', 'Walnut', 'Sky Blue', 'Mint Green', 'Beige', 'Pink', 'Orange', 'Ash Brown'];
     const mff30ImageOrder = [1, 2, 9, 3, 4, 5, 6, 7, 8];
     const mff30SwatchOrder = [1, 2, 8, 6, 4, 7, 5, 3, 9];
-    const mff30Colors = mff30Codes.map((code, index) => ({ code, name: mff30Names[index], image: `assets/images/material-selector/colors/mff30-${String(mff30ImageOrder[index]).padStart(2, '0')}.jpg`, swatch: `revise-2/MFF25-30/LINE_ALBUM_MFF25-30_260902_${mff30SwatchOrder[index]}.jpg` }));
+    const mff30Colors = mff30Codes.map((code, index) => ({ code, name: mff30Names[index], image: `assets/images/material-selector/colors/mff30-${String(mff30ImageOrder[index]).padStart(2, '0')}.webp`, swatch: `revise-2/MFF25-30/LINE_ALBUM_MFF25-30_260902_${mff30SwatchOrder[index]}.webp` }));
 
     const models = [
-        { id: 'hpl-10', family: 'hpl', label: 'HPL 10 mm', series: 'HPL Series', thickness: '10 mm', surface: 'High Pressure Laminate', document: 'assets/images/material-selector/docs/hpl.jpg', colors: hplColors },
-        { id: 'hpl-13', family: 'hpl', label: 'HPL 13 mm', series: 'HPL Series', thickness: '13 mm', surface: 'High Pressure Laminate', document: 'assets/images/material-selector/docs/hpl.jpg', colors: hplColors },
-        { id: 'pb-18', family: 'pb', label: 'PB 18 mm', series: 'PB Series', thickness: '18 mm', surface: 'Particle Board', document: 'assets/images/material-selector/docs/pb.jpg', colors: pbColors },
-        { id: 'pb-28', family: 'pb', label: 'PB 28 mm', series: 'PB Series', thickness: '28 mm', surface: 'Particle Board', document: 'assets/images/material-selector/docs/pb.jpg', colors: pbColors },
-        { id: 'mff-25', family: 'mff', label: 'MFF 25 mm', series: 'MFF Series', thickness: '25 mm', surface: 'Melamine Faced Foamboard', document: 'assets/images/material-selector/docs/mff-25.jpg', colors: mff25Colors },
-        { id: 'mff-30', family: 'mff', label: 'MFF 30 mm', series: 'MFF Series', thickness: '30 mm', surface: 'Melamine Faced Foamboard', document: 'assets/images/material-selector/docs/mff-30.jpg', colors: mff30Colors }
+        { id: 'hpl-10', family: 'hpl', label: 'HPL 10 mm', series: 'HPL Series', thickness: '10 mm', surface: 'High Pressure Laminate', document: 'assets/images/material-selector/docs/hpl.webp', colors: hplColors },
+        { id: 'hpl-13', family: 'hpl', label: 'HPL 13 mm', series: 'HPL Series', thickness: '13 mm', surface: 'High Pressure Laminate', document: 'assets/images/material-selector/docs/hpl.webp', colors: hplColors },
+        { id: 'pb-18', family: 'pb', label: 'PB 18 mm', series: 'PB Series', thickness: '18 mm', surface: 'Particle Board', document: 'assets/images/material-selector/docs/pb.webp', colors: pbColors },
+        { id: 'pb-28', family: 'pb', label: 'PB 28 mm', series: 'PB Series', thickness: '28 mm', surface: 'Particle Board', document: 'assets/images/material-selector/docs/pb.webp', colors: pbColors },
+        { id: 'mff-25', family: 'mff', label: 'MFF 25 mm', series: 'MFF Series', thickness: '25 mm', surface: 'Melamine Faced Foamboard', document: 'assets/images/material-selector/docs/mff-25.webp', colors: mff25Colors },
+        { id: 'mff-30', family: 'mff', label: 'MFF 30 mm', series: 'MFF Series', thickness: '30 mm', surface: 'Melamine Faced Foamboard', document: 'assets/images/material-selector/docs/mff-30.webp', colors: mff30Colors }
     ];
 
     return {

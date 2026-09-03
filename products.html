@@ -83,7 +83,7 @@
     <header x-data="{ mobileMenu: false }" class="site-header site-header--sticky z-50">
     <div class="mx-auto flex h-20 max-w-[1480px] items-center justify-between px-5 md:px-10">
       <a href="index.html" class="site-brand-link group flex items-center rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#075AA8] focus-visible:ring-offset-2" aria-label="The Toilet Partition หน้าแรก">
-        <img src="assets/images/logo-toilet-partition.png" alt="" width="240" height="239" class="site-brand-logo" aria-hidden="true">
+        <img src="assets/images/logo-toilet-partition.webp" alt="" width="240" height="239" class="site-brand-logo" aria-hidden="true">
       </a>
       <nav aria-label="เมนูหลัก" class="site-nav-shell hidden items-center gap-2 xl:flex">
         <a href="index.html" class="nav-pill">หน้าแรก</a>
@@ -105,7 +105,7 @@
 
     <!-- Product Hero: the clean source image is paired with the reference typography. -->
     <section class="products-hero relative min-h-[620px] h-[100svh] w-full overflow-hidden" aria-labelledby="products-hero-title">
-        <img src="revise-1/06/LINE_ALBUM_06_260825_2.jpg" alt="ห้องน้ำสำเร็จรูปหลากสีในพื้นที่สมัยใหม่" class="absolute inset-0 h-full w-full object-cover object-center" fetchpriority="high">
+        <img src="revise-1/06/LINE_ALBUM_06_260825_2.webp" alt="ห้องน้ำสำเร็จรูปหลากสีในพื้นที่สมัยใหม่" class="absolute inset-0 h-full w-full object-cover object-center" fetchpriority="high">
         <div class="products-hero-content relative z-10 flex h-full flex-col items-center justify-end px-5 pb-[4vh] text-center sm:px-8">
             <h1 id="products-hero-title" class="products-hero-title font-black leading-[0.86] text-white">
                 PRODUCT
@@ -125,34 +125,34 @@
         x-data="{ 
             filter: 'all', 
             products: [
-                { id: 'TH02', series: 'hpl', title: 'HPL10/13s : TH02 (Cream)', path: 'HPL_10_13s/TH02/TH02_image_1.jpg' },
-                { id: 'TH03', series: 'hpl', title: 'HPL10/13s : TH03 (Gray)', path: 'HPL_10_13s/TH03/TH03_image_1.jpg' },
-                { id: 'TH05', series: 'hpl', title: 'HPL10/13s : TH05 (Green)', path: 'HPL_10_13s/TH05/TH05_image_1.jpg' },
-                { id: 'TH06', series: 'hpl', title: 'HPL10/13s : TH06 (Blue)', path: 'HPL_10_13s/TH06/TH06_image_1.jpg' },
-                { id: 'TH07', series: 'hpl', title: 'HPL10/13s : TH07 (Brown)', path: 'HPL_10_13s/TH07/TH07_image_1.jpg' },
-                { id: 'TH08', series: 'hpl', title: 'HPL10/13s : TH08 (Beige)', path: 'HPL_10_13s/TH08/TH08_image_1.jpg' },
-                { id: 'TH09', series: 'hpl', title: 'HPL10/13s : TH09 (White)', path: 'HPL_10_13s/TH09/TH09_image_1.jpg' },
-                { id: 'TH22', series: 'hpl', title: 'HPL10/13s : TH22 (Stone Pattern)', path: 'HPL_10_13s/TH22/TH22_image_1.jpg' },
-                { id: 'TH23', series: 'hpl', title: 'HPL10/13s : TH23 (Wood Pattern)', path: 'HPL_10_13s/TH23/TH23_image_1.jpg' },
-                { id: 'TH24', series: 'hpl', title: 'HPL10/13s : TH24 (Marble Pattern)', path: 'HPL_10_13s/TH24/TH24_image_1.jpg' },
-                { id: 'TH26', series: 'hpl', title: 'HPL10/13s : TH26 (Dark Wood Pattern)', path: 'HPL_10_13s/TH26/TH26_image_1.jpg' },
-                { id: 'TH33', series: 'hpl', title: 'HPL10/13s : TH33 (Sandstone Pattern)', path: 'HPL_10_13s/TH33/TH33_image_1.jpg' },
-                { id: 'TH34', series: 'hpl', title: 'HPL10/13s : TH34 (Granite Pattern)', path: 'HPL_10_13s/TH34/TH34_image_1.jpg' },
-                { id: 'TP01', series: 'pb', title: 'PB18/28s : TP01 (White)', path: 'PB_18_28s/TP01/TP01_image_1.jpg' },
-                { id: 'TP02', series: 'pb', title: 'PB18/28s : TP02 (Cream)', path: 'PB_18_28s/TP02/TP02_image_1.jpg' },
-                { id: 'TP03', series: 'pb', title: 'PB18/28s : TP03 (Gray)', path: 'PB_18_28s/TP03/TP03_image_1.jpg' },
-                { id: 'TP07', series: 'pb', title: 'PB18/28s : TP07 (Brown)', path: 'PB_18_28s/TP07/TP07_image_1.jpg' },
-                { id: 'TP10', series: 'pb', title: 'PB18/28s : TP10 (Beige)', path: 'PB_18_28s/TP10/TP10_image_1.jpg' },
-                { id: 'TP11', series: 'pb', title: 'PB18/28s : TP11 (Light Green)', path: 'PB_18_28s/TP11/TP11_image_1.jpg' },
-                { id: 'TP21', series: 'pb', title: 'PB18/28s : TP21 (White Marble)', path: 'PB_18_28s/TP21/TP21_image_1.jpg' },
-                { id: 'TP22', series: 'pb', title: 'PB18/28s : TP22 (Gray Marble)', path: 'PB_18_28s/TP22/TP22_image_1.jpg' },
-                { id: 'TP23', series: 'pb', title: 'PB18/28s : TP23 (Green Marble)', path: 'PB_18_28s/TP23/TP23_image_1.jpg' },
-                { id: 'TP33', series: 'pb', title: 'PB18/28s : TP33 (Teak Wood)', path: 'PB_18_28s/TP33/TP33_image_1.jpg' },
-                { id: 'TP34', series: 'pb', title: 'PB18/28s : TP34 (Oak Wood)', path: 'PB_18_28s/TP34/TP34_image_1.jpg' },
-                { id: 'TP41', series: 'pb', title: 'PB18/28s : TP41 (Granite)', path: 'PB_18_28s/TP41/TP41_image_1.jpg' },
-                { id: 'TP42', series: 'pb', title: 'PB18/28s : TP42 (Sandstone)', path: 'PB_18_28s/TP42/TP42_image_1.jpg' },
-                { id: 'MFF-25', series: 'mff', title: 'MFF 25 mm', path: 'assets/images/material-selector/colors/mff25-01.jpg', href: 'products/mff-premium.html', isLocal: true },
-                { id: 'MFF-30', series: 'mff', title: 'MFF 30 mm', path: 'assets/images/material-selector/colors/mff30-09.jpg', href: 'products/mff-compact.html', isLocal: true }
+                { id: 'TH02', series: 'hpl', title: 'HPL10/13s : TH02 (Cream)', path: 'HPL_10_13s/TH02/TH02_image_1.webp' },
+                { id: 'TH03', series: 'hpl', title: 'HPL10/13s : TH03 (Gray)', path: 'HPL_10_13s/TH03/TH03_image_1.webp' },
+                { id: 'TH05', series: 'hpl', title: 'HPL10/13s : TH05 (Green)', path: 'HPL_10_13s/TH05/TH05_image_1.webp' },
+                { id: 'TH06', series: 'hpl', title: 'HPL10/13s : TH06 (Blue)', path: 'HPL_10_13s/TH06/TH06_image_1.webp' },
+                { id: 'TH07', series: 'hpl', title: 'HPL10/13s : TH07 (Brown)', path: 'HPL_10_13s/TH07/TH07_image_1.webp' },
+                { id: 'TH08', series: 'hpl', title: 'HPL10/13s : TH08 (Beige)', path: 'HPL_10_13s/TH08/TH08_image_1.webp' },
+                { id: 'TH09', series: 'hpl', title: 'HPL10/13s : TH09 (White)', path: 'HPL_10_13s/TH09/TH09_image_1.webp' },
+                { id: 'TH22', series: 'hpl', title: 'HPL10/13s : TH22 (Stone Pattern)', path: 'HPL_10_13s/TH22/TH22_image_1.webp' },
+                { id: 'TH23', series: 'hpl', title: 'HPL10/13s : TH23 (Wood Pattern)', path: 'HPL_10_13s/TH23/TH23_image_1.webp' },
+                { id: 'TH24', series: 'hpl', title: 'HPL10/13s : TH24 (Marble Pattern)', path: 'HPL_10_13s/TH24/TH24_image_1.webp' },
+                { id: 'TH26', series: 'hpl', title: 'HPL10/13s : TH26 (Dark Wood Pattern)', path: 'HPL_10_13s/TH26/TH26_image_1.webp' },
+                { id: 'TH33', series: 'hpl', title: 'HPL10/13s : TH33 (Sandstone Pattern)', path: 'HPL_10_13s/TH33/TH33_image_1.webp' },
+                { id: 'TH34', series: 'hpl', title: 'HPL10/13s : TH34 (Granite Pattern)', path: 'HPL_10_13s/TH34/TH34_image_1.webp' },
+                { id: 'TP01', series: 'pb', title: 'PB18/28s : TP01 (White)', path: 'PB_18_28s/TP01/TP01_image_1.webp' },
+                { id: 'TP02', series: 'pb', title: 'PB18/28s : TP02 (Cream)', path: 'PB_18_28s/TP02/TP02_image_1.webp' },
+                { id: 'TP03', series: 'pb', title: 'PB18/28s : TP03 (Gray)', path: 'PB_18_28s/TP03/TP03_image_1.webp' },
+                { id: 'TP07', series: 'pb', title: 'PB18/28s : TP07 (Brown)', path: 'PB_18_28s/TP07/TP07_image_1.webp' },
+                { id: 'TP10', series: 'pb', title: 'PB18/28s : TP10 (Beige)', path: 'PB_18_28s/TP10/TP10_image_1.webp' },
+                { id: 'TP11', series: 'pb', title: 'PB18/28s : TP11 (Light Green)', path: 'PB_18_28s/TP11/TP11_image_1.webp' },
+                { id: 'TP21', series: 'pb', title: 'PB18/28s : TP21 (White Marble)', path: 'PB_18_28s/TP21/TP21_image_1.webp' },
+                { id: 'TP22', series: 'pb', title: 'PB18/28s : TP22 (Gray Marble)', path: 'PB_18_28s/TP22/TP22_image_1.webp' },
+                { id: 'TP23', series: 'pb', title: 'PB18/28s : TP23 (Green Marble)', path: 'PB_18_28s/TP23/TP23_image_1.webp' },
+                { id: 'TP33', series: 'pb', title: 'PB18/28s : TP33 (Teak Wood)', path: 'PB_18_28s/TP33/TP33_image_1.webp' },
+                { id: 'TP34', series: 'pb', title: 'PB18/28s : TP34 (Oak Wood)', path: 'PB_18_28s/TP34/TP34_image_1.webp' },
+                { id: 'TP41', series: 'pb', title: 'PB18/28s : TP41 (Granite)', path: 'PB_18_28s/TP41/TP41_image_1.webp' },
+                { id: 'TP42', series: 'pb', title: 'PB18/28s : TP42 (Sandstone)', path: 'PB_18_28s/TP42/TP42_image_1.webp' },
+                { id: 'MFF-25', series: 'mff', title: 'MFF 25 mm', path: 'assets/images/material-selector/colors/mff25-01.webp', href: 'products/mff-premium.html', isLocal: true },
+                { id: 'MFF-30', series: 'mff', title: 'MFF 30 mm', path: 'assets/images/material-selector/colors/mff30-09.webp', href: 'products/mff-compact.html', isLocal: true }
             ]
         }"
     >
